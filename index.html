@@ -63,6 +63,7 @@
             text-transform: uppercase;
             font-size: 0.9rem;
             transition: color 0.3s;
+            cursor: pointer;
         }
         
         .nav-menu a:hover {
@@ -259,7 +260,7 @@
             text-align: justify;
         }
         
-        /* Services Section - Respetando diseño original */
+        /* Services Section */
         .services {
             padding: 100px 0;
             background: #f8f9fa;
@@ -333,7 +334,7 @@
         }
         
         .service-btn {
-            background: linear-gradient(135deg, #d4af37, #f4d03f);
+            background: linear-gradient(135deg, #e67e22, #d35400);
             color: white;
             padding: 15px 30px;
             border: none;
@@ -351,7 +352,7 @@
             transform: translateY(-2px);
         }
         
-        /* Instagram Section - Respetando diseño original */
+        /* Instagram Section */
         .instagram {
             padding: 100px 0;
             background: white;
@@ -483,7 +484,7 @@
         
         .form-submit {
             width: 100%;
-            background: linear-gradient(135deg, #2c3e50, #34495e);
+            background: linear-gradient(135deg, #c0392b, #a93226);
             color: white;
             padding: 18px;
             border: none;
@@ -560,7 +561,7 @@
             font-size: 0.9rem;
         }
         
-        /* Footer - Respetando diseño original */
+        /* Footer */
         .footer {
             background: #2c3e50;
             color: white;
@@ -655,6 +656,9 @@
             z-index: 1000;
             box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
             transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .whatsapp-btn:hover {
@@ -712,8 +716,9 @@
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#instagram">Instagram</a></li>
                 <li><a href="#contacto">Contacto</a></li>
+                <li><a onclick="mostrarContactoExtendido()">Más Info</a></li>
             </ul>
-            <button class="header-cta" onclick="agendarAsesoria()">Contacto</button>
+            <button class="header-cta" onclick="scrollToForm()">Contacto</button>
         </nav>
     </header>
 
@@ -724,9 +729,9 @@
         </div>
         <div class="container">
             <div class="hero-content">
-                <h1>Expertos en diseño, organización y coordinación de bodas.</h1>
-                <p class="hero-tagline">Haz de tu boda, una aventura inolvidable.</p>
-                <button class="btn-primary" onclick="agendarAsesoria()">🎯 Agenda tu Asesoría Virtual Gratuita</button>
+                <h1>¿Cansados de Wedding Planners que organizan 5 bodas el mismo mes que la suya?</h1>
+                <p class="hero-tagline">Somos los únicos que te garantizamos dedicación exclusiva: Solo 1 boda por mes para que tu matrimonio en Cartagena sea perfecto hasta el último detalle.</p>
+                <button class="btn-primary" onclick="scrollToForm()">Agenda Asesoría Virtual Sin Costo</button>
             </div>
         </div>
     </section>
@@ -808,8 +813,7 @@
             </div>
             
             <div class="service-cta">
-                <a href="#" class="service-btn" onclick="agendarAsesoria()">Agenda una asesoría virtual</a>
-                <a href="#" class="service-btn" onclick="scrollToForm()">Agenda una asesoría virtual</a>
+                <a href="#contacto" class="service-btn" onclick="scrollToForm()">Solo Quedan 8 Cupos Para 2025</a>
             </div>
         </div>
     </section>
@@ -903,7 +907,7 @@
                         <div class="form-group">
                             <textarea placeholder="Cuéntanos sobre tu boda soñada..." rows="3"></textarea>
                         </div>
-                        <button type="submit" class="form-submit">Recibir Mi Propuesta Personalizada</button>
+                        <button type="submit" class="form-submit">Reserva Tu Fecha Ahora - Solo 1 Boda Por Mes</button>
                     </form>
                 </div>
             </div>
@@ -1006,53 +1010,106 @@
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/56999999999?text=Hola, quiero información sobre bodas destino en Cartagena" class="whatsapp-btn" target="_blank">
-        💬
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.89 3.487"/>
+        </svg>
     </a>
 
     <!-- Scripts -->
     <script>
-        // Smooth scrolling for navigation
+        // Smooth scrolling for navigation and CTAs
         function scrollToForm() {
             document.getElementById('contacto').scrollIntoView({
                 behavior: 'smooth'
             });
-        }
-
-        // Función para agendar asesoría (OPCIÓN A: Calendly)
-        function agendarAsesoria() {
-            // Opción 1: Calendly (RECOMENDADO)
-            window.open('https://calendly.com/perfectwedding/asesoria-gratuita', '_blank');
             
-            // Track conversion
+            // Track CTA click
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'conversion', {
-                    send_to: 'AW-CONVERSION-ID/CONVERSION-LABEL',
-                    value: 5500000, // valor del servicio
-                    currency: 'CLP'
+                gtag('event', 'cta_click', {
+                    event_category: 'CTA',
+                    event_label: 'Scroll to Form',
+                    value: 1
                 });
             }
-            
-            // Facebook Pixel tracking
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'Lead');
-            }
         }
 
-        // Función alternativa para WhatsApp directo
-        function agendarAsesoriaPorWhatsApp() {
-            const mensaje = `¡Hola! Quiero agendar mi asesoría virtual GRATUITA para mi boda destino en Cartagena.
-
-¿Cuándo podríamos conversar?
-
-Mis datos básicos:
-- Nombre: [completar]
-- Fecha tentativa boda: [completar] 
-- Número de invitados aprox: [completar]
-- Presupuesto aproximado: [completar]
-
-¡Gracias!`;
-            
-            window.open(`https://wa.me/56999999999?text=${encodeURIComponent(mensaje)}`, '_blank');
+        // Función para mostrar página de contacto extendida
+        function mostrarContactoExtendido() {
+            // Crear overlay con información extendida
+            const overlay = document.createElement('div');
+            overlay.innerHTML = `
+                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; overflow-y: auto;">
+                    <div style="background: white; max-width: 800px; margin: 50px auto; padding: 40px; border-radius: 10px;">
+                        <button onclick="document.body.removeChild(this.closest('div').parentElement)" style="float: right; background: none; border: none; font-size: 24px; cursor: pointer;">×</button>
+                        
+                        <h2 style="color: #2c3e50; margin-bottom: 30px; font-style: italic;">Información Completa de Contacto</h2>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px;">
+                            <div>
+                                <h3 style="color: #d4af37; margin-bottom: 20px;">📞 Teléfonos</h3>
+                                <p><strong>Colombia:</strong> +57 300 123 4567</p>
+                                <p><strong>Santiago Chile:</strong> +56 9 8765 4321</p>
+                                <p><em>Horarios: Lun-Vie 9:00-18:00 (Chile)</em></p>
+                                
+                                <h3 style="color: #d4af37; margin: 30px 0 20px;">📧 Emails</h3>
+                                <p><strong>General:</strong> info@perfectwedding.cl</p>
+                                <p><strong>Carolina:</strong> carolina@perfectwedding.cl</p>
+                                <p><strong>Cotizaciones:</strong> cotizaciones@perfectwedding.cl</p>
+                            </div>
+                            
+                            <div>
+                                <h3 style="color: #d4af37; margin-bottom: 20px;">🏢 Oficinas</h3>
+                                <p><strong>Santiago:</strong><br>
+                                Las Condes, Santiago<br>
+                                (Reuniones con cita previa)</p>
+                                
+                                <p><strong>Cartagena:</strong><br>
+                                Centro Histórico<br>
+                                Cartagena de Indias, Colombia</p>
+                                
+                                <h3 style="color: #d4af37; margin: 30px 0 20px;">⏰ Proceso</h3>
+                                <p>1. Asesoría virtual gratuita (60 min)</p>
+                                <p>2. Propuesta personalizada (24h)</p>
+                                <p>3. Reunión de contratación</p>
+                                <p>4. Planificación completa</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background: #f8f9fa; padding: 30px; border-radius: 10px; margin-bottom: 30px;">
+                            <h3 style="color: #2c3e50; margin-bottom: 20px;">🎯 ¿Cuál es la mejor forma de contactarnos?</h3>
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                                <div style="text-align: center; padding: 20px; background: white; border-radius: 10px;">
+                                    <div style="font-size: 2rem; margin-bottom: 10px;">🎥</div>
+                                    <strong>Asesoría Virtual</strong>
+                                    <p style="font-size: 0.9rem; color: #666;">Ideal para conocernos y ver propuestas</p>
+                                    <button onclick="scrollToForm(); document.body.removeChild(this.closest('div').parentElement)" style="background: #d4af37; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Agendar</button>
+                                </div>
+                                
+                                <div style="text-align: center; padding: 20px; background: white; border-radius: 10px;">
+                                    <div style="font-size: 2rem; margin-bottom: 10px;">💬</div>
+                                    <strong>WhatsApp</strong>
+                                    <p style="font-size: 0.9rem; color: #666;">Para consultas rápidas inmediatas</p>
+                                    <button onclick="window.open('https://wa.me/56999999999', '_blank')" style="background: #25d366; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Chatear</button>
+                                </div>
+                                
+                                <div style="text-align: center; padding: 20px; background: white; border-radius: 10px;">
+                                    <div style="font-size: 2rem; margin-bottom: 10px;">📧</div>
+                                    <strong>Email</strong>
+                                    <p style="font-size: 0.9rem; color: #666;">Para información detallada</p>
+                                    <button onclick="window.open('mailto:info@perfectwedding.cl', '_blank')" style="background: #2c3e50; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Escribir</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, #d4af37, #f4d03f); border-radius: 10px; color: white;">
+                            <h3 style="margin-bottom: 15px;">⚡ Solo 12 Bodas al Año</h3>
+                            <p>Contacta ahora para asegurar tu fecha 2025-2026</p>
+                            <button onclick="scrollToForm(); document.body.removeChild(this.closest('div').parentElement)" style="background: white; color: #2c3e50; border: none; padding: 15px 30px; border-radius: 5px; cursor: pointer; margin-top: 15px; font-weight: bold;">🎯 AGENDAR AHORA</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(overlay);
         }
 
         // Fade in animation on scroll
