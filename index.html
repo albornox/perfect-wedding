@@ -13,7 +13,7 @@
         }
         
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Georgia', 'Times New Roman', serif;
             line-height: 1.6;
             color: #333;
         }
@@ -47,6 +47,7 @@
             font-weight: bold;
             color: #d4af37;
             text-decoration: none;
+            font-family: 'Georgia', serif;
         }
         
         .nav-menu {
@@ -59,6 +60,8 @@
             text-decoration: none;
             color: #333;
             font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
             transition: color 0.3s;
         }
         
@@ -71,10 +74,12 @@
             color: white;
             padding: 12px 25px;
             border: none;
-            border-radius: 30px;
+            border-radius: 5px;
             font-weight: bold;
             cursor: pointer;
             transition: transform 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
         
         .header-cta:hover {
@@ -119,103 +124,114 @@
         
         .hero-content h1 {
             font-size: 3.5rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .hero-subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            font-style: italic;
-            color: #f4d03f;
-        }
-        
-        .hero-content h2 {
-            font-size: 1.8rem;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             font-weight: 400;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-style: italic;
+            line-height: 1.2;
         }
         
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+        .hero-tagline {
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            font-weight: 300;
+            opacity: 0.9;
         }
         
-        .btn-primary, .btn-secondary {
-            padding: 18px 35px;
+        .btn-primary {
+            background: linear-gradient(135deg, #d4af37, #f4d03f);
+            color: white;
+            padding: 18px 40px;
             border: none;
-            border-radius: 50px;
+            border-radius: 5px;
             font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s;
             text-transform: uppercase;
             letter-spacing: 1px;
+            display: inline-block;
+            text-decoration: none;
         }
         
-        .btn-primary {
-            background: linear-gradient(135deg, #d4af37, #f4d03f);
-            color: white;
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-primary:hover, .btn-secondary:hover {
+        .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
         
-        .btn-secondary:hover {
-            background: white;
-            color: #333;
-        }
-        
-        /* Exclusivity Banner */
-        .exclusivity {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        
-        .exclusivity h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .exclusivity p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        /* Value Section */
-        .value-section {
-            padding: 80px 0;
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
             background: #f8f9fa;
         }
         
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #2c3e50;
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
         }
         
-        .section-subtitle {
+        .about-image {
+            width: 100%;
+            height: 500px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #666;
             text-align: center;
-            font-size: 1.2rem;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        /* Destination Section */
+        .destinations {
+            padding: 100px 0;
+            background: #fff;
+        }
+        
+        .destinations h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .destinations-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
             color: #666;
             margin-bottom: 60px;
         }
         
-        .about-image {
+        .destination-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        
+        .destination-image {
             width: 100%;
             height: 400px;
             background: #f0f0f0;
@@ -226,142 +242,52 @@
             color: #666;
             text-align: center;
             padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 50px;
-        }
-        
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-        
-        .benefit-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .benefit-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .benefit-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        
-        .benefit-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-        }
-        
-        .gallery-item {
-            height: 250px;
-            background: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            color: #666;
-            text-align: center;
-            padding: 15px;
             border-radius: 10px;
         }
         
-        /* Destinations Section */
-        .destinations {
-            padding: 80px 0;
-            background: white;
-        }
-        
-        .destinations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 50px;
-            margin-top: 50px;
-        }
-        
-        .destination-card {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-        
-        .destination-image {
-            width: 100%;
-            height: 300px;
-            background: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            color: #666;
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .destination-content {
-            padding: 30px;
-            background: linear-gradient(135deg, #f8f9fa, white);
-        }
-        
-        .destination-title {
+        .destination-text h3 {
             font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             color: #2c3e50;
+            font-weight: 400;
         }
         
-        .destination-features {
-            list-style: none;
+        .destination-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
         }
         
-        .destination-features li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-        }
-        
-        .destination-features li:before {
-            content: "🌴";
-            position: absolute;
-            left: 0;
-        }
-        
-        /* Services Section */
+        /* Services Section - Respetando diseño original */
         .services {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        
+        .services h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 80px;
+            color: #2c3e50;
+            font-weight: 400;
+            font-style: italic;
         }
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            margin-top: 50px;
+            margin-bottom: 60px;
         }
         
         .service-card {
             background: white;
-            padding: 30px;
-            border-radius: 15px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
         
@@ -369,83 +295,188 @@
             transform: translateY(-5px);
         }
         
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        
-        /* Chile Section */
-        .chile-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #2c3e50, #3498db);
-            color: white;
-        }
-        
-        .chile-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .chile-info h2 {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-        }
-        
-        .team-photo {
-            width: 200px;
+        .service-image {
+            width: 100%;
             height: 200px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.1);
+            background: #f0f0f0;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.9rem;
-            color: rgba(255,255,255,0.8);
+            color: #666;
             text-align: center;
-            margin: 20px auto;
-            padding: 20px;
+            padding: 15px;
         }
         
-        .areas-list {
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .service-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #666;
+        }
+        
+        .service-cta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .service-btn {
+            background: linear-gradient(135deg, #d4af37, #f4d03f);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .service-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Instagram Section - Respetando diseño original */
+        .instagram {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .instagram h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .instagram-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+        }
+        
+        .instagram-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin: 30px 0;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
         }
         
-        .area-item {
-            background: rgba(255,255,255,0.1);
+        .instagram-post {
+            aspect-ratio: 1;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
             padding: 15px;
             border-radius: 10px;
-            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         
-        /* Contact Form */
+        .instagram-post:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s;
+        }
+        
+        /* Contact Form Section */
+        .contact-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .contact-info h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .contact-info p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .contact-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .contact-features li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1rem;
+        }
+        
+        .contact-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #f4d03f;
+            font-weight: bold;
+        }
+        
         .contact-form {
             background: white;
             padding: 40px;
-            border-radius: 20px;
+            border-radius: 10px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            max-width: 500px;
-            margin: 0 auto;
+        }
+        
+        .contact-form h3 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            font-weight: 400;
         }
         
         .form-group {
             margin-bottom: 25px;
         }
         
-        .form-group input, .form-group select {
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 15px;
             border: 2px solid #e9ecef;
-            border-radius: 10px;
+            border-radius: 5px;
             font-size: 1rem;
             transition: border-color 0.3s;
         }
         
-        .form-group input:focus, .form-group select:focus {
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             outline: none;
             border-color: #d4af37;
         }
@@ -456,71 +487,72 @@
             color: white;
             padding: 18px;
             border: none;
-            border-radius: 10px;
-            font-size: 1.2rem;
+            border-radius: 5px;
+            font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
             transition: transform 0.3s;
+            text-transform: uppercase;
         }
         
         .form-submit:hover {
             transform: translateY(-2px);
         }
         
-        .trust-signals {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .trust-item {
-            text-align: center;
-        }
-        
         /* Testimonials */
         .testimonials {
-            padding: 80px 0;
+            padding: 100px 0;
             background: #f8f9fa;
+        }
+        
+        .testimonials h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #2c3e50;
+            font-weight: 400;
+            font-style: italic;
         }
         
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px;
-            margin-top: 50px;
         }
         
         .testimonial-card {
             background: white;
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
         }
         
-        .testimonial-card:before {
-            content: '"';
-            font-size: 4rem;
-            color: #d4af37;
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            font-family: serif;
+        .testimonial-image {
+            width: 80px;
+            height: 80px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #666;
         }
         
         .testimonial-text {
             font-style: italic;
             font-size: 1.1rem;
-            line-height: 1.8;
+            line-height: 1.6;
             margin-bottom: 20px;
-            margin-top: 30px;
+            color: #555;
         }
         
         .testimonial-author {
             font-weight: bold;
             color: #2c3e50;
+            margin-bottom: 5px;
         }
         
         .testimonial-location {
@@ -528,36 +560,85 @@
             font-size: 0.9rem;
         }
         
-        .image-placeholder {
+        /* Footer - Respetando diseño original */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 0 40px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #d4af37;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .footer-section p, .footer-section li {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .social-links a:hover {
+            opacity: 1;
+        }
+        
+        .certifications {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 0;
+            border-top: 1px solid #34495e;
+            border-bottom: 1px solid #34495e;
+            margin-bottom: 40px;
+        }
+        
+        .cert-badge {
+            width: 80px;
+            height: 80px;
             background: #f0f0f0;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1rem;
+            font-size: 0.7rem;
             color: #666;
             text-align: center;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
         }
         
-        /* CTA Section */
-        .final-cta {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #d4af37, #f4d03f);
-            color: white;
+        .footer-bottom {
             text-align: center;
-        }
-        
-        .final-cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .urgency-text {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            font-weight: bold;
+            padding-top: 30px;
+            border-top: 1px solid #34495e;
+            opacity: 0.6;
+            font-size: 0.9rem;
         }
         
         /* WhatsApp Button */
@@ -586,29 +667,26 @@
                 font-size: 2.5rem;
             }
             
-            .hero-content h2 {
-                font-size: 1.4rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
             .nav-menu {
                 display: none;
             }
             
-            .chile-content {
+            .about-content, .destination-content, .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .services-grid {
                 grid-template-columns: 1fr;
             }
             
-            .areas-list {
-                grid-template-columns: 1fr;
+            .instagram-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .destinations-grid {
-                grid-template-columns: 1fr;
+            .certifications {
+                flex-wrap: wrap;
+                gap: 20px;
             }
         }
         
@@ -631,156 +709,62 @@
             <a href="#" class="logo">PERFECT WEDDING</a>
             <ul class="nav-menu">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#destinos">Destinos</a></li>
                 <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#instagram">Instagram</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
-            <button class="header-cta" onclick="scrollToForm()">Contactar Ahora</button>
+            <button class="header-cta" onclick="agendarAsesoria()">Contacto</button>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="hero-bg">
-            📸 IMAGEN HERO: Pareja de novios en ceremonia en la playa de Cartagena - Vista aérea del Mar Caribe al fondo, atardecer dorado, ambiente romántico y elegante. Debe mostrar exclusividad y lujo.
+            📸 IMAGEN HERO: Pareja de novios en ceremonia romántica en la playa de Cartagena - Vista del Mar Caribe al fondo, atardecer dorado, velo flotando, ambiente elegante y exclusivo que refleje lujo y sofisticación.
         </div>
         <div class="container">
             <div class="hero-content">
-                <h1>Wedding Planner Especialista en Bodas en la Playa - Cartagena y el Caribe</h1>
-                <p class="hero-subtitle">Matrimonios exclusivos con dedicación total: solo 1 boda por mes</p>
-                <h2>Organización integral de matrimonios en Cartagena de Indias y Colombia<br>
-                <em>Desde Chile hacia tu boda destino perfecta en el Caribe</em></h2>
-                <div class="cta-buttons">
-                    <button class="btn-primary" onclick="scrollToForm()">🎯 AGENDA TU ASESORÍA VIRTUAL GRATUITA</button>
-                    <button class="btn-secondary" onclick="scrollToForm()">📋 COTIZA TU BODA DESTINO</button>
+                <h1>Expertos en diseño, organización y coordinación de bodas.</h1>
+                <p class="hero-tagline">Haz de tu boda, una aventura inolvidable.</p>
+                <button class="btn-primary" onclick="agendarAsesoria()">🎯 Agenda tu Asesoría Virtual Gratuita</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    📸 IMAGEN CAROLINA: Carolina Lorday en su oficina o ambiente profesional - Líder de equipo, cuenta con más de 10 años de experiencia en organización de bodas. Ambiente cálido y profesional que transmita confianza y expertise internacional.
+                </div>
+                <div class="about-text">
+                    <h2>Wedding Planner Especialista en Bodas Destino</h2>
+                    <p>Carolina Lorday, líder de nuestro equipo, cuenta con más de 10 años de experiencia en la organización de bodas, ha acompañado a muchas parejas a dar el "Gran sí" en Chile y el Caribe Colombiano.</p>
+                    
+                    <p>Su pasión por el mundo de las bodas y eventos sociales la impulsa a aprender y explotar constantemente las últimas tendencias, tanto a nivel nacional como internacional, para que cada celebración sea única y especial.</p>
+                    
+                    <p>Nuestro equipo, formado por profesionales con gran experiencia en la planificación de eventos, se distingue por su compromiso con la excelencia y la mejora continua. Trabajamos con dedicación para cuidar cada detalle y hacer que tu día especial sea verdaderamente inolvidable, con el toque único de cada pareja que nos elige para ser guiados en este hermoso proceso de la materialización de su sueño.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Exclusivity Banner -->
-    <section class="exclusivity">
+    <!-- Destination Section -->
+    <section class="destinations">
         <div class="container">
-            <h3>⚡ SOLO 12 BODAS AL AÑO - RESERVA TU FECHA</h3>
-            <p>Exclusividad garantizada con dedicación completa a tu matrimonio destino</p>
-        </div>
-    </section>
-
-    <!-- Value Proposition -->
-    <section class="value-section">
-        <div class="container">
-            <h2 class="section-title">¿Por qué elegir Perfect Wedding para tu matrimonio en el Caribe?</h2>
-            <p class="section-subtitle">Wedding planning exclusivo con más de 10 años de experiencia organizando bodas destino</p>
+            <h2>Bodas Destino</h2>
+            <p class="destinations-subtitle">Cartagena de Indias, el destino de bodas más encantador de Latinoamérica</p>
             
-            <!-- About Image -->
-            <div class="about-image">
-                📸 IMAGEN SOBRE NOSOTROS: Carolina Lorday en su oficina o en una reunión con una pareja - Ambiente profesional pero cálido, mostrando experiencia y cercanía. Debe transmitir confianza y expertise.
-            </div>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">👑</div>
-                    <h3 class="benefit-title">Exclusividad Total</h3>
-                    <p>Solo 1 boda por mes para dedicación completa a tu matrimonio en Cartagena</p>
+            <div class="destination-content">
+                <div class="destination-image">
+                    📸 IMAGEN CARTAGENA: Vista icónica de Cartagena de Indias - Pareja de palenqueras con vestidos coloridos celebrando, fondo de arquitectura colonial, ambiente festivo y cultural. Debe evocar la magia del Caribe colombiano y la riqueza cultural del destino.
                 </div>
-                
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">🏖️</div>
-                    <h3 class="benefit-title">Experiencia Comprobada</h3>
-                    <p>Especialistas certificados en bodas en la playa del Caribe colombiano</p>
-                </div>
-                
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">💎</div>
-                    <h3 class="benefit-title">Servicio Integral</h3>
-                    <p>Preboda + Boda + Postboda incluidos en el plan wedding completo</p>
-                </div>
-                
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">🏆</div>
-                    <h3 class="benefit-title">Certificaciones Internacionales</h3>
-                    <p>Acreditados por INIBEP y CIDWEP - estándares mundiales de calidad</p>
-                </div>
-                
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">🇨🇱</div>
-                    <h3 class="benefit-title">Desde Santiago</h3>
-                    <p>Organización desde Chile con ejecución perfecta en Colombia</p>
-                </div>
-                
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">✨</div>
-                    <h3 class="benefit-title">Personalización Única</h3>
-                    <p>Cada matrimonio diseñado según la historia y sueños de la pareja</p>
-                </div>
-            </div>
-            
-            <!-- Gallery Section -->
-            <h3 style="text-align: center; font-size: 2rem; margin: 60px 0 30px; color: #2c3e50;">Nuestras Bodas Destino en Cartagena</h3>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    📸 GALERÍA 1: Ceremonia en la playa al atardecer - Arco floral frente al mar, sillas blancas, iluminación cálida
-                </div>
-                <div class="gallery-item">
-                    📸 GALERÍA 2: Mesa de recepción elegante - Decoración tropical chic, vista al mar, ambiente nocturno
-                </div>
-                <div class="gallery-item">
-                    📸 GALERÍA 3: Pareja brindando - Fondo Cartagena colonial iluminada, momento íntimo y romántico
-                </div>
-                <div class="gallery-item">
-                    📸 GALERÍA 4: Detalle decorativo - Centros de mesa tropicales, cristalería fina, estilo caribeño elegante
-                </div>
-                <div class="gallery-item">
-                    📸 GALERÍA 5: Baile de novios - Pista de baile en la playa bajo las estrellas, iluminación ambiente
-                </div>
-                <div class="gallery-item">
-                    📸 GALERÍA 6: Vista aérea - Montaje completo de la boda en resort de lujo, perfecta organización
-                </div>
-            </div>
-            
-            <div style="text-align: center;">
-                <button class="btn-primary" onclick="scrollToForm()">🎯 DESCUBRE CÓMO HACEMOS TU SUEÑO REALIDAD</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Destinations Section -->
-    <section class="destinations" id="destinos">
-        <div class="container">
-            <h2 class="section-title">Destinos de Ensueño para tu Boda en la Playa</h2>
-            <p class="section-subtitle">Matrimonios en los escenarios más románticos del Caribe</p>
-            
-            <div class="destinations-grid">
-                <div class="destination-card fade-in">
-                    <div class="destination-image">
-                        📸 DESTINO CARTAGENA: Vista icónica de Cartagena - Murallas coloniales, mar turquesa, arquitectura histórica. Debe evocar romance y distinción cultural.
-                    </div>
-                    <div class="destination-content">
-                        <h3 class="destination-title">Cartagena de Indias - Caribe Colombiano</h3>
-                        <ul class="destination-features">
-                            <li>Wedding planner especializado en el destino más romántico de Latinoamérica</li>
-                            <li>Bodas en la playa con arquitectura colonial única</li>
-                            <li>Experiencias gastronómicas y culturales exclusivas</li>
-                            <li>Ceremonia frente al Mar Caribe con atardeceres perfectos</li>
-                            <li>Hoteles boutique y resorts de lujo</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="destination-card fade-in">
-                    <div class="destination-image">
-                        📸 OTROS DESTINOS CARIBE: Playa paradisíaca del Caribe colombiano - Arena blanca, palmeras, aguas cristalinas. Ambiente tropical exclusivo y sofisticado.
-                    </div>
-                    <div class="destination-content">
-                        <h3 class="destination-title">Otros Destinos Caribe</h3>
-                        <ul class="destination-features">
-                            <li>Matrimonios personalizados en el Caribe colombiano</li>
-                            <li>Combinación perfecta de playa, historia y lujo</li>
-                            <li>Islas privadas para ceremonias íntimas</li>
-                            <li>Santa Marta y región magdalena</li>
-                            <li>Experiencias únicas de luna de miel</li>
-                        </ul>
-                    </div>
+                <div class="destination-text">
+                    <h3>Cartagena de Indias - El Destino Perfecto</h3>
+                    <p>Cartagena de Indias, en Colombia, es el destino predilecto para bodas, por bodas, y lunas de miel en Latinoamérica. Su fusión de romanticismo, historia y el Mar Caribe la convierten en un escenario perfecto para celebrar el amor en un entorno de Realismo Mágico.</p>
+                    
+                    <p>Imagina dar el "Sí, acepto" con el sonido de las olas de fondo o rodeado de la imponente arquitectura colonial de la ciudad amurallada. Con nuestro servicio de <strong>bodas de destino a la medida</strong>, hacemos realidad la ceremonia con la que siempre has soñado, cuidando cada detalle para que sea única e inolvidable.</p>
                 </div>
             </div>
         </div>
@@ -789,83 +773,106 @@
     <!-- Services Section -->
     <section class="services" id="servicios">
         <div class="container">
-            <h2 class="section-title">Wedding Planning Completo para tu Matrimonio Destino</h2>
-            <p class="section-subtitle">Organizamos cada detalle de tu boda en la playa del Caribe</p>
+            <h2>Nuestros Servicios</h2>
             
             <div class="services-grid">
                 <div class="service-card fade-in">
-                    <div class="service-icon">🎯</div>
-                    <h3>Organización Completa</h3>
-                    <p>Plan wedding desde la conceptualización hasta ejecución perfecta en Cartagena</p>
+                    <div class="service-image">
+                        📸 SERVICIO 1: Reunión de asesoramiento matrimonial - Carolina con una pareja en proceso de planificación, ambiente profesional y cercano
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Asesoramiento Matrimonial</h3>
+                        <p class="service-description">Comenzamos desde cero, en conjunto diseñamos el matrimonio que los identifique, hacemos el estilo que más lo represente como pareja, a manos a la obra!</p>
+                    </div>
                 </div>
                 
                 <div class="service-card fade-in">
-                    <div class="service-icon">🏖️</div>
-                    <h3>Bodas en la Playa</h3>
-                    <p>Especialistas en ceremonias frente al mar con todos los permisos legales</p>
+                    <div class="service-image">
+                        📸 SERVICIO 2: Proceso de asesoramiento guía - Detalles de planificación, cronogramas, coordinación de proveedores
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Asesoramiento Guía</h3>
+                        <p class="service-description">Nos Adaptamos a la planificación que ya han realizado, convirtiéndonos a los procedimientos finales, revisamos los procesos de asesoramiento guía, apoyo y coordinación del evento.</p>
+                    </div>
                 </div>
                 
                 <div class="service-card fade-in">
-                    <div class="service-icon">💍</div>
-                    <h3>Todo Tipo de Ceremonias</h3>
-                    <p>Religiosas, civiles, simbólicas, renovación de votos - adaptadas a sus creencias</p>
+                    <div class="service-image">
+                        📸 SERVICIO 3: Coordinación del día de la boda - Equipo Perfect Wedding coordinando el evento, atmosfera de profesionalismo
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Coordinación</h3>
+                        <p class="service-description">Ya tienes todos tus proveedores contratados? Nosotros somos los responsables de coordinar todo. Descansa en nuestra labor!</p>
+                    </div>
                 </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">🎉</div>
-                    <h3>Experiencia Integral</h3>
-                    <p>Preboda, boda y postboda incluidas en el servicio de wedding planning</p>
+            </div>
+            
+            <div class="service-cta">
+                <a href="#" class="service-btn" onclick="agendarAsesoria()">Agenda una asesoría virtual</a>
+                <a href="#" class="service-btn" onclick="scrollToForm()">Agenda una asesoría virtual</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="instagram" id="instagram">
+        <div class="container">
+            <h2>Síguenos en</h2>
+            <h2 style="font-size: 3rem; margin-top: -20px; color: #E4405F;">Instagram</h2>
+            
+            <div class="instagram-grid">
+                <div class="instagram-post">
+                    📸 INSTAGRAM 1: "Beneficios de una boda destino" - Post educativo con tips y consejos
                 </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">🌟</div>
-                    <h3>Personalización Total</h3>
-                    <p>Cada detalle pensado para tu historia única y preferencias personales</p>
+                <div class="instagram-post">
+                    📸 INSTAGRAM 2: Mesa elegante en la playa - Setup de cena romántica frente al mar
                 </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">📋</div>
-                    <h3>Coordinación Chile-Colombia</h3>
-                    <p>Planificación desde Santiago con ejecución local en Cartagena de Indias</p>
+                <div class="instagram-post">
+                    📸 INSTAGRAM 3: Grupo de invitados celebrando - Ambiente festivo en yate o embarcación
+                </div>
+                <div class="instagram-post">
+                    📸 INSTAGRAM 4: "¿Te embarcas con nosotros?" - Post call-to-action con pareja
+                </div>
+                <div class="instagram-post">
+                    📸 INSTAGRAM 5: Torre del Reloj Cartagena - Arquitectura colonial icónica
+                </div>
+                <div class="instagram-post">
+                    📸 INSTAGRAM 6: Video de boda - Reproducir símbolo, vista previa de ceremonia
+                </div>
+                <div class="instagram-post">
+                    📸 INSTAGRAM 7: Carolina en viñedo - Ambiente profesional en locación de bodas
+                </div>
+                <div class="instagram-post">
+                    📸 INSTAGRAM 8: Carolina trabajando - Behind the scenes de planificación
+                </div>
+                <div class="instagram-post">
+                    📸 INSTAGRAM 9: Iglesia colonial - Interior de iglesia histórica en Cartagena
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Chile Target Section -->
-    <section class="chile-section">
+    <!-- Contact Section -->
+    <section class="contact-section" id="contacto">
         <div class="container">
-            <div class="chile-content">
-                <div class="chile-info">
+            <div class="contact-content">
+                <div class="contact-info">
                     <h2>Organizador de Bodas Chile - Especialistas en Destinos Internacionales</h2>
-                    <p>Dirigido especialmente a parejas de Santiago y Región Metropolitana que buscan experiencias únicas para su matrimonio en el Caribe.</p>
+                    <p>Dirigido especialmente a parejas de Santiago y Región Metropolitana que buscan experiencias únicas para su matrimonio destino en el Caribe.</p>
                     
-                    <!-- Team Photo -->
-                    <div class="team-photo">
-                        📸 FOTO EQUIPO: Carolina y Mary en oficina en Santiago - Ambiente profesional, elegante, que transmita confianza y expertise local
-                    </div>
-                    
-                    <h3>Comunas que Atendemos:</h3>
-                    <div class="areas-list">
-                        <div class="area-item">Las Condes</div>
-                        <div class="area-item">Vitacura</div>
-                        <div class="area-item">Lo Barnechea</div>
-                        <div class="area-item">Chicureo</div>
-                        <div class="area-item">Los Trapenses</div>
-                        <div class="area-item">San Carlos de Apoquindo</div>
-                    </div>
-                    
-                    <h3>Ventajas desde Chile:</h3>
-                    <ul style="margin-top: 20px;">
-                        <li>✅ Coordinación desde Santiago con ejecución internacional</li>
-                        <li>✅ Conocimiento del mercado chileno y preferencias locales</li>
-                        <li>✅ Presupuestos en pesos chilenos con transparencia total</li>
-                        <li>✅ Reuniones presenciales en Santiago para planificación</li>
+                    <h3 style="color: #f4d03f; margin: 30px 0 20px;">Ventajas desde Chile:</h3>
+                    <ul class="contact-features">
+                        <li>Coordinación desde Santiago con ejecución internacional</li>
+                        <li>Solo 1 boda por mes - Dedicación exclusiva</li>
+                        <li>Conocimiento del mercado chileno y preferencias locales</li>
+                        <li>Presupuestos en pesos chilenos con transparencia total</li>
+                        <li>Reuniones presenciales en Santiago para planificación</li>
+                        <li>Servicio integral: Preboda + Boda + Postboda</li>
                     </ul>
                 </div>
                 
-                <div class="contact-form" id="contacto">
-                    <h3 style="color: #2c3e50; text-align: center; margin-bottom: 30px;">Recibe Tu Cotización Personalizada</h3>
+                <div class="contact-form">
+                    <h3>Recibe Tu Cotización Personalizada</h3>
                     <form>
                         <div class="form-group">
                             <input type="text" placeholder="Nombre completo" required>
@@ -893,58 +900,45 @@
                                 <option value="grande">Boda grande (80+)</option>
                             </select>
                         </div>
-                        <button type="submit" class="form-submit">📋 RECIBIR MI PROPUESTA PERSONALIZADA</button>
+                        <div class="form-group">
+                            <textarea placeholder="Cuéntanos sobre tu boda soñada..." rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">Recibir Mi Propuesta Personalizada</button>
                     </form>
-                    
-                    <div class="trust-signals">
-                        <div class="trust-item">
-                            <div style="width: 60px; height: 60px; background: #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; color: white; font-weight: bold; font-size: 0.8rem;">INIBEP</div>
-                            <small>Certificación Internacional</small>
-                        </div>
-                        <div class="trust-item">
-                            <div style="width: 60px; height: 60px; background: #2c3e50; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; color: white; font-weight: bold; font-size: 0.8rem;">CIDWEP</div>
-                            <small>Estándar Mundial</small>
-                        </div>
-                        <div class="trust-item">
-                            <div style="width: 60px; height: 60px; background: #27ae60; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; color: white; font-size: 24px;">✓</div>
-                            <small>+50 Bodas Exitosas</small>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials" id="testimonios">
+    <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">Parejas Felices Recomiendan Nuestro Wedding Planning</h2>
-            <p class="section-subtitle">Testimonios reales de matrimonios realizados en Cartagena y el Caribe</p>
+            <h2>Parejas Felices Recomiendan Nuestro Wedding Planning</h2>
             
             <div class="testimonials-grid">
                 <div class="testimonial-card fade-in">
-                    <div class="image-placeholder" style="height: 80px; margin-bottom: 20px;">
-                        📸 FOTO TESTIMONIO 1: Pareja María José y Carlos en su boda en Cartagena - Momento feliz, elegante, que transmita satisfacción
+                    <div class="testimonial-image">
+                        📸 Pareja 1
                     </div>
-                    <p class="testimonial-text">Nuestra boda en Cartagena fue un sueño hecho realidad. Perfect Wedding cuidó cada detalle, desde la ceremonia en la playa hasta la fiesta en el hotel boutique. La dedicación exclusiva realmente se nota cuando solo organizan 1 boda por mes.</p>
+                    <p class="testimonial-text">"Nuestra boda en Cartagena fue un sueño hecho realidad. Perfect Wedding cuidó cada detalle, desde la ceremonia en la playa hasta la fiesta. La dedicación exclusiva realmente se nota cuando solo organizan 1 boda por mes."</p>
                     <p class="testimonial-author">María José y Carlos</p>
                     <p class="testimonial-location">Las Condes, Santiago</p>
                 </div>
                 
                 <div class="testimonial-card fade-in">
-                    <div class="image-placeholder" style="height: 80px; margin-bottom: 20px;">
-                        📸 FOTO TESTIMONIO 2: Pareja Andrea y Sebastián en ceremonia - Ambiente romántico en la playa, felicidad genuina
+                    <div class="testimonial-image">
+                        📸 Pareja 2
                     </div>
-                    <p class="testimonial-text">El mejor organizador de bodas de Chile para destinos internacionales. Nos casamos en la playa más hermosa del Caribe colombiano. Todo fue perfecto, desde la coordinación en Santiago hasta el último detalle en Cartagena de Indias.</p>
+                    <p class="testimonial-text">"El mejor wedding planner de Chile para destinos internacionales. Nos casamos en la playa más hermosa del Caribe. Todo fue perfecto, desde la coordinación en Santiago hasta el último detalle en Cartagena."</p>
                     <p class="testimonial-author">Andrea y Sebastián</p>
                     <p class="testimonial-location">Vitacura, Santiago</p>
                 </div>
                 
                 <div class="testimonial-card fade-in">
-                    <div class="image-placeholder" style="height: 80px; margin-bottom: 20px;">
-                        📸 FOTO TESTIMONIO 3: Pareja Francisca y Diego brindando - Momento de celebración, lujo discreto, ambiente caribeño
+                    <div class="testimonial-image">
+                        📸 Pareja 3
                     </div>
-                    <p class="testimonial-text">Carolina y su equipo superaron todas nuestras expectativas. El wedding planning fue impecable y el servicio integral que incluye preboda, boda y postboda hizo que nuestra experiencia en el Caribe fuera inolvidable.</p>
+                    <p class="testimonial-text">"Carolina y su equipo superaron todas nuestras expectativas. El servicio integral que incluye preboda, boda y postboda hizo que nuestra experiencia en el Caribe fuera inolvidable."</p>
                     <p class="testimonial-author">Francisca y Diego</p>
                     <p class="testimonial-location">Lo Barnechea, Santiago</p>
                 </div>
@@ -952,125 +946,60 @@
         </div>
     </section>
 
-    <!-- Final CTA Section -->
-    <section class="final-cta">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <h2>⚡ SOLO 12 BODAS AL AÑO - RESERVA TU FECHA AHORA</h2>
-            <p class="urgency-text">Exclusividad garantizada • Solo 1 boda por mes • Cupos limitados 2025-2026</p>
-            
-            <div class="cta-buttons">
-                <button class="btn-secondary" onclick="scrollToForm()" style="background: white; color: #2c3e50;">🎯 AGENDA TU ASESORÍA VIRTUAL GRATUITA</button>
-                <button class="btn-primary" style="background: linear-gradient(135deg, #2c3e50, #34495e);" onclick="window.open('https://wa.me/56999999999?text=Hola, quiero información sobre bodas destino en Cartagena', '_blank')">💬 ESCRIBIR POR WHATSAPP</button>
-            </div>
-            
-            <p style="margin-top: 30px; font-size: 1.1rem; opacity: 0.9;">
-                ✅ Asesoría virtual sin costo<br>
-                ✅ Cotización personalizada en 24 horas<br>
-                ✅ Presupuesto detallado en pesos chilenos
-            </p>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section style="padding: 60px 0; background: #f8f9fa;">
-        <div class="container">
-            <h2 class="section-title">Preguntas Frecuentes sobre Bodas Destino en Cartagena</h2>
-            
-            <!-- Process Images -->
-            <div class="image-placeholder" style="height: 200px; margin: 40px 0;">
-                📸 PROCESO DE TRABAJO: Collage mostrando el proceso - Reunión en Santiago + Planificación + Ejecución en Cartagena. Debe mostrar profesionalismo y metodología.
-            </div>
-            
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div style="background: white; margin-bottom: 20px; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <div style="padding: 25px; border-left: 5px solid #d4af37;">
-                        <h3 style="margin-bottom: 15px; color: #2c3e50;">¿Por qué elegir bodas en la playa en Cartagena?</h3>
-                        <p>Cartagena de Indias combina la magia del Caribe colombiano con una arquitectura colonial única. Es el destino perfecto para matrimonios que buscan playa, cultura, gastronomía excepcional y la calidez del pueblo colombiano.</p>
-                    </div>
+            <!-- Certifications Section -->
+            <div class="certifications">
+                <div class="cert-badge">
+                    📸 CERT 1: Logo INIBEP - Certificación internacional de wedding planner
                 </div>
-                
-                <div style="background: white; margin-bottom: 20px; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <div style="padding: 25px; border-left: 5px solid #d4af37;">
-                        <h3 style="margin-bottom: 15px; color: #2c3e50;">¿Qué incluye el servicio de wedding planner completo?</h3>
-                        <p>Incluimos preboda, ceremonia principal y postboda. Coordinamos desde Santiago toda la logística, permisos, proveedores locales, hospedaje para invitados, y cada detalle para que solo se preocupen de disfrutar.</p>
-                    </div>
+                <div class="cert-badge">
+                    📸 CERT 2: Logo CIDWEP - Estándares mundiales de planificación de bodas
                 </div>
-                
-                <div style="background: white; margin-bottom: 20px; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <div style="padding: 25px; border-left: 5px solid #d4af37;">
-                        <h3 style="margin-bottom: 15px; color: #2c3e50;">¿Cuánto tiempo antes debo contratar el servicio?</h3>
-                        <p>Como solo organizamos 1 boda por mes, recomendamos contactarnos con 8-12 meses de anticipación. Esto garantiza disponibilidad en las fechas deseadas y tiempo suficiente para la planificación perfecta.</p>
-                    </div>
-                </div>
-                
-                <div style="background: white; margin-bottom: 20px; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <div style="padding: 25px; border-left: 5px solid #d4af37;">
-                        <h3 style="margin-bottom: 15px; color: #2c3e50;">¿El matrimonio en Colombia es válido en Chile?</h3>
-                        <p>Sí, coordinamos todos los trámites legales necesarios. Los matrimonios realizados en Colombia son completamente válidos en Chile siguiendo los protocolos consulares correspondientes.</p>
-                    </div>
+                <div class="cert-badge">
+                    📸 CERT 3: Reconocimiento adicional - Validación de expertise y calidad
                 </div>
             </div>
             
-            <!-- Certifications Images -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 50px;">
-                <div class="image-placeholder" style="height: 100px;">
-                    📸 CERTIFICACIÓN INIBEP: Logo oficial y certificado - Debe mostrar prestigio y reconocimiento internacional
-                </div>
-                <div class="image-placeholder" style="height: 100px;">
-                    📸 CERTIFICACIÓN CIDWEP: Logo oficial y certificado - Credibilidad y estándares mundiales
-                </div>
-                <div class="image-placeholder" style="height: 100px;">
-                    📸 RECONOCIMIENTOS: Otros premios o menciones - Validación de expertise y calidad
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Information -->
-    <footer style="background: #2c3e50; color: white; padding: 40px 0;">
-        <div class="container">
-            <!-- Behind the Scenes Image -->
-            <div class="image-placeholder" style="height: 150px; margin-bottom: 40px; color: white; background: rgba(255,255,255,0.1);">
-                📸 BEHIND THE SCENES: Carolina y su equipo trabajando - Coordinación, planificación, atención al detalle. Debe mostrar profesionalismo y dedicación.
-            </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: center;">
-                <div>
-                    <h3 style="margin-bottom: 20px; color: #d4af37;">TELÉFONOS</h3>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Teléfonos</h3>
                     <p>Colombia: +57 300 123 4567</p>
                     <p>Santiago Chile: +56 9 8765 4321</p>
                 </div>
                 
-                <div>
-                    <h3 style="margin-bottom: 20px; color: #d4af37;">EMAIL</h3>
+                <div class="footer-section">
+                    <h3>Email</h3>
                     <p>info@perfectwedding.cl</p>
                     <p>carolina@perfectwedding.cl</p>
                 </div>
                 
-                <div>
-                    <h3 style="margin-bottom: 20px; color: #d4af37;">SÍGUENOS</h3>
-                    <div style="display: flex; justify-content: center; gap: 20px; font-size: 1.5rem;">
-                        <a href="#" style="color: white; text-decoration: none;">📘</a>
-                        <a href="#" style="color: white; text-decoration: none;">📷</a>
-                        <a href="#" style="color: white; text-decoration: none;">🎬</a>
-                        <a href="#" style="color: white; text-decoration: none;">💌</a>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">📘</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="YouTube">🎬</a>
+                        <a href="#" title="Email">💌</a>
                     </div>
-                    
-                    <!-- Social Media Previews -->
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 30px;">
-                        <div class="image-placeholder" style="height: 80px; font-size: 0.8rem;">
-                            📸 INSTAGRAM POST: Preview de boda en Cartagena
-                        </div>
-                        <div class="image-placeholder" style="height: 80px; font-size: 0.8rem;">
-                            📸 FACEBOOK POST: Video de ceremonia
-                        </div>
-                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li>Bodas en Cartagena de Indias</li>
+                        <li>Wedding Planning Integral</li>
+                        <li>Coordinación desde Chile</li>
+                        <li>Asesoría Matrimonial</li>
+                        <li>Bodas en la Playa</li>
+                    </ul>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 1px solid #34495e;">
+            <div class="footer-bottom">
                 <p>&copy; 2025 Perfect Wedding Chile. Especialistas en bodas destino en Cartagena y el Caribe.</p>
-                <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">Wedding planner certificado • Bodas en la playa • Matrimonios exclusivos en Colombia</p>
+                <p>Wedding planner certificado • Bodas en la playa • Matrimonios exclusivos en Colombia</p>
             </div>
         </div>
     </footer>
@@ -1087,6 +1016,43 @@
             document.getElementById('contacto').scrollIntoView({
                 behavior: 'smooth'
             });
+        }
+
+        // Función para agendar asesoría (OPCIÓN A: Calendly)
+        function agendarAsesoria() {
+            // Opción 1: Calendly (RECOMENDADO)
+            window.open('https://calendly.com/perfectwedding/asesoria-gratuita', '_blank');
+            
+            // Track conversion
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    send_to: 'AW-CONVERSION-ID/CONVERSION-LABEL',
+                    value: 5500000, // valor del servicio
+                    currency: 'CLP'
+                });
+            }
+            
+            // Facebook Pixel tracking
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead');
+            }
+        }
+
+        // Función alternativa para WhatsApp directo
+        function agendarAsesoriaPorWhatsApp() {
+            const mensaje = `¡Hola! Quiero agendar mi asesoría virtual GRATUITA para mi boda destino en Cartagena.
+
+¿Cuándo podríamos conversar?
+
+Mis datos básicos:
+- Nombre: [completar]
+- Fecha tentativa boda: [completar] 
+- Número de invitados aprox: [completar]
+- Presupuesto aproximado: [completar]
+
+¡Gracias!`;
+            
+            window.open(`https://wa.me/56999999999?text=${encodeURIComponent(mensaje)}`, '_blank');
         }
 
         // Fade in animation on scroll
@@ -1115,20 +1081,25 @@
             
             // Get form data
             const formData = new FormData(this);
-            const nombre = formData.get('text') || document.querySelector('input[type="text"]').value;
-            const email = formData.get('email') || document.querySelector('input[type="email"]').value;
-            const telefono = formData.get('tel') || document.querySelector('input[type="tel"]').value;
+            const nombre = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            const telefono = this.querySelector('input[type="tel"]').value;
+            const fecha = this.querySelector('select').value;
+            const invitados = this.querySelectorAll('select')[1].value;
+            const mensaje_extra = this.querySelector('textarea').value;
             
             // Create WhatsApp message
-            const mensaje = `Hola! Quiero información sobre bodas destino en Cartagena.
+            const mensaje = `¡Hola! Quiero información sobre bodas destino en Cartagena.
             
 Mis datos:
 - Nombre: ${nombre}
 - Email: ${email}  
 - Teléfono: ${telefono}
-- Interés: Matrimonio en Cartagena de Indias
+- Fecha tentativa: ${fecha}
+- Número de invitados: ${invitados}
+- Mensaje: ${mensaje_extra}
 
-Gracias!`;
+¡Gracias!`;
             
             // Open WhatsApp
             const whatsappURL = `https://wa.me/56999999999?text=${encodeURIComponent(mensaje)}`;
@@ -1136,6 +1107,19 @@ Gracias!`;
             
             // Show success message
             this.innerHTML = '<div style="text-align: center; padding: 40px;"><h3 style="color: #27ae60;">¡Mensaje enviado!</h3><p>Te contactaremos en las próximas horas para agendar tu asesoría gratuita.</p></div>';
+            
+            // Track conversion
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'generate_lead', {
+                    event_category: 'Contact',
+                    event_label: 'Contact Form',
+                    value: 1
+                });
+            }
+            
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead');
+            }
         });
 
         // Header scroll effect
@@ -1150,8 +1134,8 @@ Gracias!`;
             }
         });
 
-        // Analytics tracking for CTAs
-        document.querySelectorAll('.btn-primary, .btn-secondary, .header-cta, .form-submit').forEach(button => {
+        // Analytics tracking for all CTAs
+        document.querySelectorAll('.btn-primary, .service-btn, .header-cta, .form-submit').forEach(button => {
             button.addEventListener('click', function() {
                 // Google Analytics event tracking
                 if (typeof gtag !== 'undefined') {
@@ -1160,11 +1144,6 @@ Gracias!`;
                         event_label: this.textContent.trim(),
                         value: 1
                     });
-                }
-                
-                // Facebook Pixel tracking
-                if (typeof fbq !== 'undefined') {
-                    fbq('track', 'Lead');
                 }
             });
         });
