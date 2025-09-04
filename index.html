@@ -224,40 +224,48 @@
             margin-bottom: 60px;
         }
         
-        .destination-content {
+        .destinations-gallery {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-            margin-bottom: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
         }
         
-        .destination-image {
+        .destination-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .destination-card .destination-image {
             width: 100%;
-            height: 400px;
+            height: 250px;
             background: #f0f0f0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #666;
             text-align: center;
             padding: 20px;
-            border-radius: 10px;
+            line-height: 1.4;
         }
         
-        .destination-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+        .destination-caption {
+            padding: 25px;
+            font-size: 1rem;
+            line-height: 1.6;
             color: #2c3e50;
-            font-weight: 400;
-        }
-        
-        .destination-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            text-align: justify;
+            text-align: center;
+            font-style: italic;
+            margin: 0;
         }
         
         /* Services Section */
@@ -352,7 +360,7 @@
             transform: translateY(-2px);
         }
         
-        /* Instagram Section */
+        /* Instagram Section - Simplified */
         .instagram {
             padding: 100px 0;
             background: white;
@@ -374,15 +382,28 @@
             margin-bottom: 60px;
         }
         
-        .instagram-grid {
+        .instagram-featured {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
             margin-bottom: 40px;
         }
         
-        .instagram-post {
-            aspect-ratio: 1;
+        .featured-post {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .featured-post:hover {
+            transform: translateY(-5px);
+        }
+        
+        .featured-post-image {
+            width: 100%;
+            height: 300px;
             background: #f0f0f0;
             display: flex;
             align-items: center;
@@ -390,15 +411,26 @@
             font-size: 0.9rem;
             color: #666;
             text-align: center;
-            padding: 15px;
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
+            padding: 20px;
+            line-height: 1.4;
         }
         
-        .instagram-post:hover {
-            transform: scale(1.02);
-            transition: transform 0.3s;
+        .featured-post-content {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .featured-post-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .featured-post-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
         }
         
         /* Contact Form Section */
@@ -509,10 +541,17 @@
         .testimonials h2 {
             font-size: 2.5rem;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 20px;
             color: #2c3e50;
             font-weight: 400;
             font-style: italic;
+        }
+        
+        .testimonials-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
         }
         
         .testimonials-grid {
@@ -675,17 +714,22 @@
                 display: none;
             }
             
-            .about-content, .destination-content, .contact-content {
+            .about-content, .contact-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
+            }
+            
+            .destinations-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
             
             .services-grid {
                 grid-template-columns: 1fr;
             }
             
-            .instagram-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .instagram-featured {
+                grid-template-columns: 1fr;
             }
             
             .certifications {
@@ -711,13 +755,6 @@
     <header class="header">
         <nav class="nav container">
             <a href="#" class="logo">PERFECT WEDDING</a>
-            <ul class="nav-menu">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#instagram">Instagram</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li><a onclick="mostrarContactoExtendido()">Más Info</a></li>
-            </ul>
             <button class="header-cta" onclick="scrollToForm()">Contacto</button>
         </nav>
     </header>
@@ -740,7 +777,7 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
-                    📸 IMAGEN CAROLINA: Carolina Lorday en su oficina o ambiente profesional - Líder de equipo, cuenta con más de 10 años de experiencia en organización de bodas. Ambiente cálido y profesional que transmita confianza y expertise internacional.
+                    IMAGEN CAROLINA: Carolina Lorduy en su oficina o ambiente profesional - Líder de equipo, cuenta con más de 10 años de experiencia en organización de bodas. Ambiente cálido y profesional que transmita confianza y expertise internacional.
                 </div>
                 <div class="about-text">
                     <h2>Carolina Lorduy, Wedding Planner Especialista en Bodas Destino</h2>
@@ -759,18 +796,44 @@
     <!-- Destination Section -->
     <section class="destinations">
         <div class="container">
-            <h2>Bodas Destino</h2>
-            <p class="destinations-subtitle">Cartagena de Indias, el destino de bodas más encantador de Latinoamérica</p>
+            <h2>Matrimonios en Cartagena de Indias: el destino perfecto en el Caribe colombiano</h2>
+            <p class="destinations-subtitle">Romántico, vibrante y lleno de magia</p>
             
-            <div class="destination-content">
-                <div class="destination-image">
-                    📸 IMAGEN CARTAGENA: Vista icónica de Cartagena de Indias - Pareja de palenqueras con vestidos coloridos celebrando, fondo de arquitectura colonial, ambiente festivo y cultural. Debe evocar la magia del Caribe colombiano y la riqueza cultural del destino.
+            <!-- Gallery of Inspirational Images -->
+            <div class="destinations-gallery">
+                <div class="destination-card fade-in">
+                    <div class="destination-image">
+                        IMAGEN: Pareja frente al mar Caribe - Novia en vestido blanco y novio en traje elegante, de pie en la arena dorada con el mar azul turquesa de fondo, ambiente romántico al atardecer
+                    </div>
+                    <p class="destination-caption">Bodas en la playa en Cartagena: un escenario de ensueño para tu 'sí, acepto'.</p>
                 </div>
-                <div class="destination-text">
-                    <h3>Cartagena de Indias - El Destino Perfecto</h3>
-                    <p>Cartagena de Indias, en Colombia, es el destino predilecto para bodas, por bodas, y lunas de miel en Latinoamérica. Su fusión de romanticismo, historia y el Mar Caribe la convierten en un escenario perfecto para celebrar el amor en un entorno de Realismo Mágico.</p>
-                    
-                    <p>Imagina dar el "Sí, acepto" con el sonido de las olas de fondo o rodeado de la imponente arquitectura colonial de la ciudad amurallada. Con nuestro servicio de <strong>bodas de destino a la medida</strong>, hacemos realidad la ceremonia con la que siempre has soñado, cuidando cada detalle para que sea única e inolvidable.</p>
+                
+                <div class="destination-card fade-in">
+                    <div class="destination-image">
+                        IMAGEN: Ceremonia al atardecer - Setup elegante de boda en la playa con arco floral, sillas decoradas y pareja intercambiando votos mientras el sol se pone en el horizonte del Caribe
+                    </div>
+                    <p class="destination-caption">Matrimonios en el Caribe colombiano con la magia del sol, el mar y cada detalle perfecto.</p>
+                </div>
+                
+                <div class="destination-card fade-in">
+                    <div class="destination-image">
+                        IMAGEN: Decoración elegante en playa - Mesa de recepción lujosa con flores tropicales, velas, cristalería fina y mantelería blanca, con vista al mar Caribe al fondo
+                    </div>
+                    <p class="destination-caption">Casamiento en Cartagena con lujo y estilo, diseñado exclusivamente para ti.</p>
+                </div>
+                
+                <div class="destination-card fade-in">
+                    <div class="destination-image">
+                        IMAGEN: Pareja en calles coloniales de Cartagena - Novios caminando románticamente por las coloridas calles empedradas del centro histórico, con balcones floridos y arquitectura colonial
+                    </div>
+                    <p class="destination-caption">Tu boda destino en Cartagena de Indias: historia, romance y exclusividad en cada rincón.</p>
+                </div>
+                
+                <div class="destination-card fade-in">
+                    <div class="destination-image">
+                        IMAGEN: Celebración íntima con familia y amigos - Grupo pequeño de invitados brindando en una terraza con vista al mar, ambiente exclusivo y personalizado, Carolina coordinando en segundo plano
+                    </div>
+                    <p class="destination-caption">Wedding planning personalizado: solo una boda por mes para dedicarte el 100% de nuestro tiempo.</p>
                 </div>
             </div>
         </div>
@@ -784,7 +847,7 @@
             <div class="services-grid">
                 <div class="service-card fade-in">
                     <div class="service-image">
-                        📸 SERVICIO 1: Reunión de asesoramiento matrimonial - Carolina con una pareja en proceso de planificación, ambiente profesional y cercano
+                        SERVICIO 1: Reunión de asesoramiento matrimonial - Carolina con una pareja en proceso de planificación, ambiente profesional y cercano
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Asesoramiento Matrimonial</h3>
@@ -794,7 +857,7 @@
                 
                 <div class="service-card fade-in">
                     <div class="service-image">
-                        📸 SERVICIO 2: Proceso de asesoramiento guía - Detalles de planificación, cronogramas, coordinación de proveedores
+                        SERVICIO 2: Proceso de asesoramiento guía - Detalles de planificación, cronogramas, coordinación de proveedores
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Asesoramiento Guía</h3>
@@ -804,7 +867,7 @@
                 
                 <div class="service-card fade-in">
                     <div class="service-image">
-                        📸 SERVICIO 3: Coordinación del día de la boda - Equipo Perfect Wedding coordinando el evento, atmosfera de profesionalismo
+                        SERVICIO 3: Coordinación del día de la boda - Equipo Perfect Wedding coordinando el evento, atmosfera de profesionalismo
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Coordinación</h3>
@@ -819,40 +882,43 @@
         </div>
     </section>
 
-    <!-- Instagram Section -->
-    <section class="instagram" id="instagram">
+    <!-- Inspiration Section -->
+    <section class="instagram" id="inspiracion">
         <div class="container">
-            <h2>Síguenos en</h2>
-            <h2 style="font-size: 3rem; margin-top: -20px; color: #E4405F;">Instagram</h2>
+            <h2>Inspiración de Bodas en Cartagena</h2>
+            <p class="instagram-subtitle">Descubre cómo transformamos tus sueños en realidad</p>
             
-            <div class="instagram-grid">
-                <div class="instagram-post">
-                    📸 INSTAGRAM 1: "Beneficios de una boda destino" - Post educativo con tips y consejos
+            <div class="instagram-featured">
+                <div class="featured-post fade-in">
+                    <div class="featured-post-image">
+                        IMAGEN: Pareja frente al mar Caribe - Novia en vestido blanco y novio en traje elegante, de pie en la arena dorada con el mar azul turquesa de fondo, ambiente romántico al atardecer
+                    </div>
+                    <div class="featured-post-content">
+                        <p class="featured-post-description">Bodas en la playa en Cartagena: un escenario de ensueño para tu 'sí, acepto'.</p>
+                    </div>
                 </div>
-                <div class="instagram-post">
-                    📸 INSTAGRAM 2: Mesa elegante en la playa - Setup de cena romántica frente al mar
+                
+                <div class="featured-post fade-in">
+                    <div class="featured-post-image">
+                        IMAGEN: Decoración elegante en playa - Mesa de recepción lujosa con flores tropicales, velas, cristalería fina y mantelería blanca, con vista al mar Caribe al fondo
+                    </div>
+                    <div class="featured-post-content">
+                        <p class="featured-post-description">Casamiento en Cartagena con lujo y estilo, diseñado exclusivamente para ti.</p>
+                    </div>
                 </div>
-                <div class="instagram-post">
-                    📸 INSTAGRAM 3: Grupo de invitados celebrando - Ambiente festivo en yate o embarcación
+                
+                <div class="featured-post fade-in">
+                    <div class="featured-post-image">
+                        IMAGEN: Pareja en calles coloniales de Cartagena - Novios caminando románticamente por las coloridas calles empedradas del centro histórico, con balcones floridos y arquitectura colonial
+                    </div>
+                    <div class="featured-post-content">
+                        <p class="featured-post-description">Tu boda destino en Cartagena de Indias: historia, romance y exclusividad en cada rincón.</p>
+                    </div>
                 </div>
-                <div class="instagram-post">
-                    📸 INSTAGRAM 4: "¿Te embarcas con nosotros?" - Post call-to-action con pareja
-                </div>
-                <div class="instagram-post">
-                    📸 INSTAGRAM 5: Torre del Reloj Cartagena - Arquitectura colonial icónica
-                </div>
-                <div class="instagram-post">
-                    📸 INSTAGRAM 6: Video de boda - Reproducir símbolo, vista previa de ceremonia
-                </div>
-                <div class="instagram-post">
-                    📸 INSTAGRAM 7: Carolina en viñedo - Ambiente profesional en locación de bodas
-                </div>
-                <div class="instagram-post">
-                    📸 INSTAGRAM 8: Carolina trabajando - Behind the scenes de planificación
-                </div>
-                <div class="instagram-post">
-                    📸 INSTAGRAM 9: Iglesia colonial - Interior de iglesia histórica en Cartagena
-                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <button class="btn-primary" onclick="scrollToForm()">¿Quieres que tu boda luzca así? Agenda tu asesoría gratuita</button>
             </div>
         </div>
     </section>
@@ -877,7 +943,7 @@
                 </div>
                 
                 <div class="contact-form">
-                    <h3>Recibe Tu Cotización Personalizada</h3>
+                    <h3>Cotiza tu boda en la playa con un wedding planner experto</h3>
                     <form>
                         <div class="form-group">
                             <input type="text" placeholder="Nombre completo" required>
@@ -918,12 +984,13 @@
     <!-- Testimonials -->
     <section class="testimonials">
         <div class="container">
-            <h2>Parejas Felices Recomiendan Nuestro Wedding Planning</h2>
+            <h2>Parejas felices que confiaron en nuestro wedding planning en Cartagena</h2>
+            <p class="testimonials-subtitle">Testimonios reales de matrimonios destino en el Caribe colombiano</p>
             
             <div class="testimonials-grid">
                 <div class="testimonial-card fade-in">
                     <div class="testimonial-image">
-                        📸 Pareja 1
+                        Pareja 1
                     </div>
                     <p class="testimonial-text">"Nuestra boda en Cartagena fue un sueño hecho realidad. Perfect Wedding cuidó cada detalle, desde la ceremonia en la playa hasta la fiesta. La dedicación exclusiva realmente se nota cuando solo organizan 1 boda por mes."</p>
                     <p class="testimonial-author">María José y Carlos</p>
@@ -932,7 +999,7 @@
                 
                 <div class="testimonial-card fade-in">
                     <div class="testimonial-image">
-                        📸 Pareja 2
+                        Pareja 2
                     </div>
                     <p class="testimonial-text">"El mejor wedding planner de Chile para destinos internacionales. Nos casamos en la playa más hermosa del Caribe. Todo fue perfecto, desde la coordinación en Santiago hasta el último detalle en Cartagena."</p>
                     <p class="testimonial-author">Andrea y Sebastián</p>
@@ -941,7 +1008,7 @@
                 
                 <div class="testimonial-card fade-in">
                     <div class="testimonial-image">
-                        📸 Pareja 3
+                        Pareja 3
                     </div>
                     <p class="testimonial-text">"Carolina y su equipo superaron todas nuestras expectativas. El servicio integral que incluye preboda, boda y postboda hizo que nuestra experiencia en el Caribe fuera inolvidable."</p>
                     <p class="testimonial-author">Francisca y Diego</p>
@@ -957,13 +1024,13 @@
             <!-- Certifications Section -->
             <div class="certifications">
                 <div class="cert-badge">
-                    📸 CERT 1: Logo INIBEP - Certificación internacional de wedding planner
+                    CERT 1: Logo INIBEP - Certificación internacional de wedding planner
                 </div>
                 <div class="cert-badge">
-                    📸 CERT 2: Logo CIDWEP - Estándares mundiales de planificación de bodas
+                    CERT 2: Logo CIDWEP - Estándares mundiales de planificación de bodas
                 </div>
                 <div class="cert-badge">
-                    📸 CERT 3: Reconocimiento adicional - Validación de expertise y calidad
+                    CERT 3: Reconocimiento adicional - Validación de expertise y calidad
                 </div>
             </div>
             
