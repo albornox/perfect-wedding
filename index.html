@@ -1,492 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Wedding Planner Bodas en la Playa Cartagena | Perfect Wedding Chile</title>
-   <meta name="description" content="Especialistas en matrimonios destino en Cartagena y el Caribe. Wedding planning exclusivo desde Chile. Solo 1 boda por mes. ¡Agenda tu asesoría gratis!">
-   
-   <!-- Favicon -->
-   <link rel="icon" type="image/png" href="http://perfectwedding.cl/wp-content/uploads/2025/03/cropped-LOGOTIPO-PERFECT-WEDDING-12.png">
-   
-   <!-- Preconnect para optimizar carga -->
-   <link rel="preconnect" href="https://www.googletagmanager.com">
-   <link rel="preconnect" href="http://perfectwedding.cl">
-   
-   <style>
-       * {
-           margin: 0;
-           padding: 0;
-           box-sizing: border-box;
-       }
-       
-       body {
-           font-family: 'Georgia', 'Times New Roman', serif;
-           line-height: 1.6;
-           color: #333;
-       }
-       
-       .container {
-           max-width: 1200px;
-           margin: 0 auto;
-           padding: 0 20px;
-       }
-       
-       /* Header - NO FIJO, DISCRETO */
-       .header {
-           background: rgba(248, 249, 251, 0.95);
-           backdrop-filter: blur(10px);
-           position: relative;
-           width: 100%;
-           z-index: 1000;
-           padding: 15px 0;
-           box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-       }
-       
-       .nav {
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
-       }
-       
-       /* Logo pequeño y discreto */
-       .logo img {
-           height: 35px;
-           width: auto;
-           opacity: 0.8;
-           transition: opacity 0.3s ease;
-       }
-       
-       .logo img:hover {
-           opacity: 1;
-       }
-       
-       .nav-menu {
-           display: flex;
-           list-style: none;
-           gap: 30px;
-       }
-       
-       .header-cta {
-           background: linear-gradient(135deg, #d4af37, #f4d03f);
-           color: white;
-           padding: 12px 25px;
-           border: none;
-           border-radius: 5px;
-           font-weight: bold;
-           cursor: pointer;
-           transition: all 0.3s;
-           text-transform: uppercase;
-           font-size: 0.9rem;
-           text-decoration: none;
-           display: inline-block;
-           box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-       }
-       
-       .header-cta:hover {
-           transform: translateY(-2px);
-           box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-       }
-       
-       /* Hero Section - IMAGEN COMPLETA */
-       .hero {
-           background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), 
-                       url('http://perfectwedding.cl/wp-content/uploads/2025/01/WhatsApp-Image-2024-10-15-at-12.27.53.jpeg');
-           background-size: cover;
-           background-position: center;
-           background-repeat: no-repeat;
-           background-attachment: fixed;
-           min-height: 100vh;
-           display: flex;
-           align-items: center;
-           color: white;
-           text-align: center;
-           position: relative;
-       }
-       
-       .hero-bg {
-           display: none;
-       }
-       
-       .hero-content {
-           position: relative;
-           z-index: 2;
-       }
-       
-       .hero-content h1 {
-           font-size: 3.5rem;
-           margin-bottom: 30px;
-           font-weight: 400;
-           text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-           font-style: italic;
-           line-height: 1.2;
-       }
-       
-       .hero-tagline {
-           font-size: 1.2rem;
-           margin-bottom: 50px;
-           font-weight: 300;
-           opacity: 0.9;
-       }
-       
-       .btn-primary {
-           background: linear-gradient(135deg, #d4af37, #f4d03f);
-           color: white;
-           padding: 18px 40px;
-           border: none;
-           border-radius: 5px;
-           font-size: 1.1rem;
-           font-weight: bold;
-           cursor: pointer;
-           transition: all 0.3s;
-           text-transform: uppercase;
-           letter-spacing: 1px;
-           display: inline-block;
-           text-decoration: none;
-       }
-       
-       .btn-primary:hover {
-           transform: translateY(-3px);
-           box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-       }
-       
-       /* About Section */
-       .about-section {
-           padding: 100px 0;
-           background: #f8f9fa;
-       }
-       
-       .about-content {
-           display: grid;
-           grid-template-columns: 1fr 1fr;
-           gap: 80px;
-           align-items: center;
-       }
-       
-       .about-image {
-           width: 100%;
-           height: 500px;
-           background: #f0f0f0;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           font-size: 1rem;
-           color: #666;
-           text-align: center;
-           padding: 20px;
-           border-radius: 10px;
-       }
-       
-       .about-text h2 {
-           font-size: 2.2rem;
-           margin-bottom: 30px;
-           color: #2c3e50;
-           font-weight: 400;
-           font-style: italic;
-       }
-       
-       .about-text p {
-           font-size: 1.1rem;
-           line-height: 1.8;
-           margin-bottom: 20px;
-           color: #555;
-       }
-       
-       /* Services Section */
-       .services {
-           padding: 100px 0;
-           background: #f8f9fa;
-       }
-       
-       .services h2 {
-           font-size: 2.5rem;
-           text-align: center;
-           margin-bottom: 80px;
-           color: #2c3e50;
-           font-weight: 400;
-           font-style: italic;
-       }
-       
-       .services-grid {
-           display: grid;
-           grid-template-columns: repeat(3, 1fr);
-           gap: 30px;
-           margin-bottom: 60px;
-       }
-       
-       .service-card {
-           background: white;
-           text-align: center;
-           padding: 0;
-           border-radius: 10px;
-           overflow: hidden;
-           box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-           transition: transform 0.3s;
-       }
-       
-       .service-card:hover {
-           transform: translateY(-5px);
-       }
-       
-       .service-image {
-           width: 100%;
-           height: 200px;
-           background: #f0f0f0;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           font-size: 0.9rem;
-           color: #666;
-           text-align: center;
-           padding: 15px;
-       }
-       
-       .service-content {
-           padding: 30px;
-       }
-       
-       .service-title {
-           font-size: 1.2rem;
-           font-weight: 500;
-           margin-bottom: 15px;
-           color: #2c3e50;
-       }
-       
-       .service-description {
-           font-size: 0.95rem;
-           line-height: 1.6;
-           color: #666;
-       }
-       
-       /* Contact Section */
-       .contact-section {
-           padding: 100px 0;
-           background: linear-gradient(135deg, #2c3e50, #3498db);
-           color: white;
-       }
-       
-       .contact-content {
-           display: grid;
-           grid-template-columns: 1fr 1fr;
-           gap: 80px;
-           align-items: center;
-       }
-       
-       .contact-info h2 {
-           font-size: 2.2rem;
-           margin-bottom: 30px;
-           font-weight: 400;
-           font-style: italic;
-       }
-       
-       .contact-info p {
-           font-size: 1.1rem;
-           line-height: 1.8;
-           margin-bottom: 30px;
-           opacity: 0.9;
-       }
-       
-       .contact-features {
-           list-style: none;
-           margin-bottom: 30px;
-       }
-       
-       .contact-features li {
-           margin-bottom: 15px;
-           padding-left: 30px;
-           position: relative;
-           font-size: 1rem;
-       }
-       
-       .contact-features li:before {
-           content: "✓";
-           position: absolute;
-           left: 0;
-           color: #f4d03f;
-           font-weight: bold;
-       }
-       
-       .contact-form {
-           background: white;
-           padding: 40px;
-           border-radius: 10px;
-           box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-       }
-       
-       .contact-form h3 {
-           color: #2c3e50;
-           text-align: center;
-           margin-bottom: 30px;
-           font-size: 1.5rem;
-           font-weight: 400;
-       }
-       
-       .form-group {
-           margin-bottom: 25px;
-       }
-       
-       .form-group input, 
-       .form-group select, 
-       .form-group textarea {
-           width: 100%;
-           padding: 15px;
-           border: 2px solid #e9ecef;
-           border-radius: 5px;
-           font-size: 1rem;
-           transition: border-color 0.3s;
-       }
-       
-       .form-group input:focus, 
-       .form-group select:focus, 
-       .form-group textarea:focus {
-           outline: none;
-           border-color: #d4af37;
-       }
-       
-       .form-submit {
-           width: 100%;
-           background: linear-gradient(135deg, #c0392b, #a93226);
-           color: white;
-           padding: 18px;
-           border: none;
-           border-radius: 5px;
-           font-size: 1.1rem;
-           font-weight: bold;
-           cursor: pointer;
-           transition: transform 0.3s;
-           text-transform: uppercase;
-       }
-       
-       .form-submit:hover {
-           transform: translateY(-2px);
-       }
-       
-       /* WhatsApp Button */
-       .whatsapp-btn {
-           position: fixed;
-           bottom: 30px;
-           right: 30px;
-           background: #25d366;
-           color: white;
-           padding: 15px;
-           border-radius: 50px;
-           text-decoration: none;
-           font-size: 1.5rem;
-           z-index: 1000;
-           box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-           transition: transform 0.3s;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-       }
-       
-       .whatsapp-btn:hover {
-           transform: scale(1.1);
-       }
-       
-       /* Mobile Responsive */
-       @media (max-width: 768px) {
-           .header {
-               padding: 10px 0;
-           }
-           
-           .logo img {
-               height: 25px;
-           }
-           
-           .hero {
-               background-attachment: scroll;
-               min-height: 100vh;
-               padding: 40px 0;
-           }
-           
-           .hero-content h1 {
-               font-size: 2.5rem;
-               margin-bottom: 20px;
-           }
-           
-           .hero-tagline {
-               font-size: 1.1rem;
-               margin-bottom: 30px;
-           }
-           
-           .btn-primary {
-               padding: 16px 32px;
-               font-size: 1rem;
-           }
-           
-           .nav-menu {
-               display: none;
-           }
-           
-           .header-cta {
-               padding: 10px 20px;
-               font-size: 0.85rem;
-           }
-           
-           .about-content, 
-           .contact-content {
-               grid-template-columns: 1fr;
-               gap: 40px;
-           }
-           
-           .services-grid {
-               grid-template-columns: 1fr;
-           }
-           
-           .about-text h2, 
-           .services h2 {
-               font-size: 2rem;
-           }
-           
-           .contact-info h2 {
-               font-size: 1.8rem;
-           }
-       }
-       
-       /* Extra pequeño */
-       @media (max-width: 480px) {
-           .logo img {
-               height: 20px;
-               opacity: 0.6;
-           }
-           
-           .hero-content h1 {
-               font-size: 2rem;
-           }
-           
-           .container {
-               padding: 0 15px;
-           }
-       }
-   </style>
-   
-   <!-- Google Tag Manager -->
-   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-   })(window,document,'script','dataLayer','GTM-T293NFVF');</script>
-   <!-- End Google Tag Manager -->
-   
-   <!-- Script para funcionalidad -->
-   <script>
-       document.addEventListener('DOMContentLoaded', function() {
-           // Smooth scroll para botones de contacto
-           const contactButtons = document.querySelectorAll('.header-cta, .btn-primary');
-           contactButtons.forEach(button => {
-               button.addEventListener('click', function(e) {
-                   e.preventDefault();
-                   const contactSection = document.querySelector('#contacto');
-                   if (contactSection) {
-                       contactSection.scrollIntoView({ 
-                           behavior: 'smooth',
-                           block: 'start'
-                       });
-                   }
-               });
-           });
-       });
-   </script>
-</head>        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Planner Bodas en la Playa Cartagena | Perfect Wedding Chile</title>
+    <meta name="description" content="Especialistas en matrimonios destino en Cartagena y el Caribe. Wedding planning exclusivo desde Chile. Solo 1 boda por mes. ¡Agenda tu asesoría gratis!">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d4af37;
+            text-decoration: none;
+            font-family: 'Georgia', serif;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        
+        .nav-menu a:hover {
+            color: #d4af37;
+        }
+        
+        .header-cta {
+            background: linear-gradient(135deg, #d4af37, #f4d03f);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        .header-cta:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+            url('https://perfectwedding.cl/wp-content/uploads/2025/01/WhatsApp-Image-2024-10-15-at-12.27.53.jpeg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+            position: relative;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #666;
+            text-align: center;
+            z-index: -1;
+            padding: 20px;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-style: italic;
+            line-height: 1.2;
+        }
+        
+        .hero-tagline {
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #d4af37, #f4d03f);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .about-image {
+            width: 100%;
+            height: 500px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #666;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        /* Destination Section */
+        .destinations {
+            padding: 100px 0;
+            background: #fff;
+        }
+        
+        .destinations h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .destinations-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+        }
+        
+        .destinations-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .destination-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .destination-card .destination-image {
+            width: 100%;
+            height: 250px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            padding: 20px;
+            line-height: 1.4;
+        }
+        
+        .destination-caption {
+            padding: 25px;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #2c3e50;
+            text-align: center;
+            font-style: italic;
+            margin: 0;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        
+        .services h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 80px;
+            color: #2c3e50;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .service-card {
+            background: white;
+            text-align: center;
+            padding: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-image {
+            width: 100%;
+            height: 200px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .service-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #666;
+        }
+        
+        .service-cta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .service-btn {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .service-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Instagram Section - Simplified */
+        .instagram {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .instagram h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .instagram-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+        }
+        
+        .instagram-featured {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .featured-post {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .featured-post:hover {
+            transform: translateY(-5px);
+        }
+        
+        .featured-post-image {
+            width: 100%;
+            height: 300px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            padding: 20px;
+            line-height: 1.4;
+        }
+        
+        .featured-post-content {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .featured-post-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .featured-post-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        /* Contact Form Section */
+        .contact-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .contact-info h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .contact-info p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .contact-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .contact-features li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1rem;
+        }
+        
+        .contact-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #f4d03f;
+            font-weight: bold;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form h3 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #d4af37;
+        }
+        
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, #c0392b, #a93226);
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-transform: uppercase;
+        }
+        
+        .form-submit:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        
+        .testimonials h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .testimonials-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .testimonial-image {
+            width: 80px;
+            height: 80px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-location {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 0 40px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #d4af37;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .footer-section p, .footer-section li {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .social-links a:hover {
+            opacity: 1;
+        }
+        
+        .certifications {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 0;
+            border-top: 1px solid #34495e;
+            border-bottom: 1px solid #34495e;
+            margin-bottom: 40px;
+        }
+        
+        .cert-badge {
+            width: 80px;
+            height: 80px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: #666;
+            text-align: center;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #34495e;
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            padding: 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .about-content, .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .destinations-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .instagram-featured {
+                grid-template-columns: 1fr;
+            }
+            
+            .certifications {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T293NFVF');</script>
+<!-- End Google Tag Manager -->
+</head>       
         .hero-content {
             position: relative;
             z-index: 2;
