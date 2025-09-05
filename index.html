@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Planner Bodas en la Playa Cartagena | Perfect Wedding Chile</title>
     <meta name="description" content="Especialistas en matrimonios destino en Cartagena y el Caribe. Wedding planning exclusivo desde Chile. Solo 1 boda por mes. ¡Agenda tu asesoría gratis!">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="http://perfectwedding.cl/wp-content/uploads/2025/03/cropped-LOGOTIPO-PERFECT-WEDDING-12.png">
     
     <!-- Preconnect para optimizar carga -->
     <link rel="preconnect" href="https://www.googletagmanager.com">
@@ -29,16 +30,15 @@
             padding: 0 20px;
         }
         
-        /* Header */
+        /* Header - NO FIJO, DISCRETO */
         .header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(248, 249, 251, 0.95);
             backdrop-filter: blur(10px);
-            position: fixed;
+            position: relative;
             width: 100%;
-            top: 0;
             z-index: 1000;
             padding: 15px 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .nav {
@@ -47,32 +47,16 @@
             align-items: center;
         }
         
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #d4af37;
-            text-decoration: none;
-            font-family: 'Georgia', serif;
+        /* Logo con imagen */
+        .logo img {
+            height: 35px;
+            width: auto;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
         }
         
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-        
-        .nav-menu a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-            cursor: pointer;
-        }
-        
-        .nav-menu a:hover {
-            color: #d4af37;
+        .logo img:hover {
+            opacity: 1;
         }
         
         .header-cta {
@@ -83,18 +67,22 @@
             border-radius: 5px;
             font-weight: bold;
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: all 0.3s;
             text-transform: uppercase;
             font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
         }
         
         .header-cta:hover {
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
         }
         
-        /* Hero Section - CORREGIDO */
+        /* Hero Section - SIN MARGIN-TOP */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), 
                         url('http://perfectwedding.cl/wp-content/uploads/2025/01/WhatsApp-Image-2024-10-15-at-12.27.53.jpeg');
             background-size: cover;
             background-position: center;
@@ -105,11 +93,9 @@
             align-items: center;
             color: white;
             text-align: center;
-            margin-top: 70px;
             position: relative;
         }
         
-        /* Eliminar el hero-bg que tapa la imagen */
         .hero-bg {
             display: none;
         }
@@ -170,33 +156,20 @@
         }
         
         .about-image {
-           width: 100%;
-           height: 500px;
-           border-radius: 10px;
-           overflow: hidden;
-           box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-       }
+            width: 100%;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
 
-       .about-image img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
-      }
-
-      /* Optimización móvil */
-      @media (max-width: 768px) {
-      .about-image {
-        height: 350px;
-        margin-bottom: 30px;
-       }
-     }
-
-      @media (max-width: 480px) {
-      .about-image {
-        height: 300px;
-      }
-    }
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
         
         .about-text h2 {
             font-size: 2.2rem;
@@ -211,72 +184,6 @@
             line-height: 1.8;
             margin-bottom: 20px;
             color: #555;
-        }
-        
-        /* Destination Section */
-        .destinations {
-            padding: 100px 0;
-            background: #fff;
-        }
-        
-        .destinations h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #2c3e50;
-            font-weight: 400;
-            font-style: italic;
-        }
-        
-        .destinations-subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 60px;
-        }
-        
-        .destinations-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .destination-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .destination-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-        
-        .destination-card .destination-image {
-            width: 100%;
-            height: 250px;
-            background: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            color: #666;
-            text-align: center;
-            padding: 20px;
-            line-height: 1.4;
-        }
-        
-        .destination-caption {
-            padding: 25px;
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #2c3e50;
-            text-align: center;
-            font-style: italic;
-            margin: 0;
         }
         
         /* Services Section */
@@ -345,106 +252,7 @@
             color: #666;
         }
         
-        .service-cta {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .service-btn {
-            background: linear-gradient(135deg, #e67e22, #d35400);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.3s;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .service-btn:hover {
-            transform: translateY(-2px);
-        }
-        
-        /* Instagram Section - Simplified */
-        .instagram {
-            padding: 100px 0;
-            background: white;
-        }
-        
-        .instagram h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #2c3e50;
-            font-weight: 400;
-            font-style: italic;
-        }
-        
-        .instagram-subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 60px;
-        }
-        
-        .instagram-featured {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .featured-post {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .featured-post:hover {
-            transform: translateY(-5px);
-        }
-        
-        .featured-post-image {
-            width: 100%;
-            height: 300px;
-            background: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            color: #666;
-            text-align: center;
-            padding: 20px;
-            line-height: 1.4;
-        }
-        
-        .featured-post-content {
-            padding: 25px;
-            text-align: center;
-        }
-        
-        .featured-post-title {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        
-        .featured-post-description {
-            font-size: 0.95rem;
-            color: #666;
-            line-height: 1.5;
-        }
-        
-        /* Contact Form Section */
+        /* Contact Section */
         .contact-section {
             padding: 100px 0;
             background: linear-gradient(135deg, #2c3e50, #3498db);
@@ -511,7 +319,9 @@
             margin-bottom: 25px;
         }
         
-        .form-group input, .form-group select, .form-group textarea {
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
             width: 100%;
             padding: 15px;
             border: 2px solid #e9ecef;
@@ -520,7 +330,9 @@
             transition: border-color 0.3s;
         }
         
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
             outline: none;
             border-color: #d4af37;
         }
@@ -543,238 +355,59 @@
             transform: translateY(-2px);
         }
         
-        /* Testimonials */
-        .testimonials {
-            padding: 100px 0;
-            background: #f8f9fa;
-        }
-        
-        .testimonials h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #2c3e50;
-            font-weight: 400;
-            font-style: italic;
-        }
-        
-        .testimonials-subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 60px;
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-        
-        .testimonial-card {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .testimonial-image {
-            width: 80px;
-            height: 80px;
-            background: #f0f0f0;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            color: #666;
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            color: #555;
-        }
-        
-        .testimonial-author {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-        
-        .testimonial-location {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        /* Footer */
-        .footer {
-            background: #2c3e50;
-            color: white;
-            padding: 60px 0 40px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-section h3 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: #d4af37;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .footer-section p, .footer-section li {
-            margin-bottom: 10px;
-            opacity: 0.8;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-        
-        .social-links a:hover {
-            opacity: 1;
-        }
-        
-        .certifications {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            padding: 40px 0;
-            border-top: 1px solid #34495e;
-            border-bottom: 1px solid #34495e;
-            margin-bottom: 40px;
-        }
-        
-        .cert-badge {
-            width: 80px;
-            height: 80px;
-            background: #f0f0f0;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            color: #666;
-            text-align: center;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #34495e;
-            opacity: 0.6;
-            font-size: 0.9rem;
-        }
-        
-        /* WhatsApp Button */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366;
-            color: white;
-            padding: 15px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.5rem;
-            z-index: 1000;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-            transition: transform 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .whatsapp-btn:hover {
-            transform: scale(1.1);
-        }
-        
-        /* Mobile Responsive - OPTIMIZADO */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
+            .header {
+                padding: 10px 0;
+            }
+            
+            .logo img {
+                height: 25px;
+            }
+            
             .hero {
-                background-attachment: scroll; /* Mejora performance en móviles */
-                min-height: 80vh;
-                padding: 20px 0;
+                background-attachment: scroll;
+                min-height: 100vh;
+                padding: 40px 0;
             }
             
             .hero-content h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
                 margin-bottom: 20px;
             }
             
             .hero-tagline {
-                font-size: 1rem;
+                font-size: 1.1rem;
                 margin-bottom: 30px;
             }
             
             .btn-primary {
-                padding: 15px 30px;
+                padding: 16px 32px;
                 font-size: 1rem;
-            }
-            
-            .nav-menu {
-                display: none;
-            }
-            
-            .logo {
-                font-size: 24px;
             }
             
             .header-cta {
                 padding: 10px 20px;
-                font-size: 0.8rem;
+                font-size: 0.85rem;
             }
             
-            .about-content, .contact-content {
+            .about-content, 
+            .contact-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
             
-            .destinations-gallery {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .about-image {
+                height: 350px;
+                margin-bottom: 30px;
             }
             
             .services-grid {
                 grid-template-columns: 1fr;
             }
             
-            .instagram-featured {
-                grid-template-columns: 1fr;
-            }
-            
-            .certifications {
-                flex-wrap: wrap;
-                gap: 20px;
-            }
-            
-            .about-text h2, .destinations h2, .services h2, .instagram h2, .testimonials h2 {
+            .about-text h2, 
+            .services h2 {
                 font-size: 2rem;
             }
             
@@ -783,35 +416,24 @@
             }
         }
         
-        /* Extra pequeño - móviles pequeños */
+        /* Extra pequeño */
         @media (max-width: 480px) {
+            .logo img {
+                height: 20px;
+                opacity: 0.6;
+            }
+            
             .hero-content h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
+            }
+            
+            .about-image {
+                height: 300px;
             }
             
             .container {
                 padding: 0 15px;
             }
-            
-            .destinations-gallery {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .destination-card .destination-image {
-                height: 200px;
-            }
-        }
-        
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
     
@@ -822,15 +444,27 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-T293NFVF');</script>
     <!-- End Google Tag Manager -->
+    
+    <!-- Script para funcionalidad -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll para botones de contacto
+            const contactButtons = document.querySelectorAll('.header-cta, .btn-primary');
+            contactButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const contactSection = document.querySelector('#contacto');
+                    if (contactSection) {
+                        contactSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav container">
-            <a href="#" class="logo">PERFECT WEDDING</a>
-            <button class="header-cta" onclick="scrollToForm()">Contacto</button>
-        </nav>
-    </header>
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
