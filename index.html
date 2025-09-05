@@ -30,7 +30,6 @@
             padding: 0 20px;
         }
         
-        /* Header - NO FIJO, DISCRETO */
         .header {
             background: rgba(248, 249, 251, 0.95);
             backdrop-filter: blur(10px);
@@ -47,7 +46,6 @@
             align-items: center;
         }
         
-        /* Logo con imagen */
         .logo img {
             height: 35px;
             width: auto;
@@ -72,15 +70,12 @@
             font-size: 0.9rem;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
         }
         
         .header-cta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
         }
         
-        /* Hero Section - SIN MARGIN-TOP */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), 
                         url('http://perfectwedding.cl/wp-content/uploads/2025/01/WhatsApp-Image-2024-10-15-at-12.27.53.jpeg');
@@ -142,7 +137,6 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
         
-        /* About Section */
         .about-section {
             padding: 100px 0;
             background: #f8f9fa;
@@ -186,7 +180,71 @@
             color: #555;
         }
         
-        /* Services Section */
+        .destinations {
+            padding: 100px 0;
+            background: #fff;
+        }
+        
+        .destinations h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .destinations-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+        }
+        
+        .destinations-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .destination-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .destination-image {
+            width: 100%;
+            height: 250px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            padding: 20px;
+            line-height: 1.4;
+        }
+        
+        .destination-caption {
+            padding: 25px;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #2c3e50;
+            text-align: center;
+            font-style: italic;
+            margin: 0;
+        }
+        
         .services {
             padding: 100px 0;
             background: #f8f9fa;
@@ -252,7 +310,97 @@
             color: #666;
         }
         
-        /* Contact Section */
+        .service-cta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .service-btn {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .service-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .instagram {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .instagram h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .instagram-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+        }
+        
+        .instagram-featured {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .featured-post {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .featured-post:hover {
+            transform: translateY(-5px);
+        }
+        
+        .featured-post-image {
+            width: 100%;
+            height: 300px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            padding: 20px;
+            line-height: 1.4;
+        }
+        
+        .featured-post-content {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .featured-post-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        
         .contact-section {
             padding: 100px 0;
             background: linear-gradient(135deg, #2c3e50, #3498db);
@@ -355,7 +503,109 @@
             transform: translateY(-2px);
         }
         
-        /* Mobile Responsive */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 0 40px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #d4af37;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .footer-section p, 
+        .footer-section li {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .social-links a:hover {
+            opacity: 1;
+        }
+        
+        .certifications {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 0;
+            border-top: 1px solid #34495e;
+            border-bottom: 1px solid #34495e;
+            margin-bottom: 40px;
+        }
+        
+        .cert-badge {
+            width: 80px;
+            height: 80px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: #666;
+            text-align: center;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #34495e;
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+        
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            padding: 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+        
         @media (max-width: 768px) {
             .header {
                 padding: 10px 0;
@@ -406,8 +656,19 @@
                 grid-template-columns: 1fr;
             }
             
+            .destinations-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .instagram-featured {
+                grid-template-columns: 1fr;
+            }
+            
             .about-text h2, 
-            .services h2 {
+            .services h2,
+            .destinations h2,
+            .instagram h2 {
                 font-size: 2rem;
             }
             
@@ -416,7 +677,6 @@
             }
         }
         
-        /* Extra pequeño */
         @media (max-width: 480px) {
             .logo img {
                 height: 20px;
@@ -445,27 +705,14 @@
     })(window,document,'script','dataLayer','GTM-T293NFVF');</script>
     <!-- End Google Tag Manager -->
     
-    <!-- Script para funcionalidad -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scroll para botones de contacto
-            const contactButtons = document.querySelectorAll('.header-cta, .btn-primary');
-            contactButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const contactSection = document.querySelector('#contacto');
-                    if (contactSection) {
-                        contactSection.scrollIntoView({ 
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
+        function scrollToForm() {
+            document.getElementById('contacto').scrollIntoView({
+                behavior: 'smooth'
             });
-        });
+        }
     </script>
 </head>
-
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="hero-bg">
