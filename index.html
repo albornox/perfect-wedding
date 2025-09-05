@@ -1,16 +1,12 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Planner Bodas en la Playa Cartagena | Perfect Wedding Chile</title>
     <meta name="description" content="Especialistas en matrimonios destino en Cartagena y el Caribe. Wedding planning exclusivo desde Chile. Solo 1 boda por mes. ¡Agenda tu asesoría gratis!">
-    
-    <!-- Favicon -->
+    <meta name="keywords" content="matrimonios en cartagena, bodas en la playa cartagena, wedding planner, bodas en la playa, matrimonio en el caribe, casamiento en el caribe, matrimonios colombia, planificador de bodas colombia, boda destino colombia">
     <link rel="icon" type="image/png" href="http://perfectwedding.cl/wp-content/uploads/2025/03/cropped-LOGOTIPO-PERFECT-WEDDING-12.png">
-    
-    <!-- Preconnect para optimizar carga -->
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="http://perfectwedding.cl">
-    
     <style>
         * {
             margin: 0;
@@ -30,15 +26,16 @@
             padding: 0 20px;
         }
         
-        /* Header */
+        /* Header - Transparent and non-fixed */
         .header {
-            background: rgba(248, 249, 251, 0.95);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(10px);
-            position: relative;
+            position: absolute;
             width: 100%;
+            top: 0;
             z-index: 1000;
             padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
         
         .nav {
@@ -48,14 +45,28 @@
         }
         
         .logo img {
-            height: 35px;
+            height: 60px;
             width: auto;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
         }
         
-        .logo img:hover {
-            opacity: 1;
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        
+        .nav-menu a:hover {
+            color: #d4af37;
         }
         
         .header-cta {
@@ -66,11 +77,9 @@
             border-radius: 5px;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: transform 0.3s;
             text-transform: uppercase;
             font-size: 0.9rem;
-            text-decoration: none;
-            display: inline-block;
         }
         
         .header-cta:hover {
@@ -79,22 +88,15 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), 
-                        url('http://perfectwedding.cl/wp-content/uploads/2025/01/WhatsApp-Image-2024-10-15-at-12.27.53.jpeg');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('http://perfectwedding.cl/wp-content/uploads/2025/01/WhatsApp-Image-2024-10-15-at-12.27.53.jpeg');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             align-items: center;
             color: white;
             text-align: center;
             position: relative;
-        }
-        
-        .hero-bg {
-            display: none;
         }
         
         .hero-content {
@@ -155,17 +157,9 @@
         .about-image {
             width: 100%;
             height: 500px;
+            background: url('http://perfectwedding.cl/wp-content/uploads/2025/03/IMG_6263.jpg') center/cover;
             border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            display: block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .about-text h2 {
@@ -183,74 +177,551 @@
             color: #555;
         }
         
+        /* Destination Section */
+        .destinations {
+            padding: 100px 0;
+            background: #fff;
+        }
+        
+        .destinations h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .destinations-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+        }
+        
+        .destinations-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .destination-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .destination-card .destination-image {
+            width: 100%;
+            height: 250px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            padding: 20px;
+            line-height: 1.4;
+        }
+        
+        .destination-caption {
+            padding: 25px;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #2c3e50;
+            text-align: center;
+            font-style: italic;
+            margin: 0;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        
+        .services h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 80px;
+            color: #2c3e50;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .service-card {
+            background: white;
+            text-align: center;
+            padding: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-image {
+            width: 100%;
+            height: 200px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .service-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #666;
+        }
+        
+        .service-cta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .service-btn {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .service-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Instagram Section */
+        .instagram {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .instagram h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .instagram-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+        }
+        
+        .instagram-featured {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .featured-post {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .featured-post:hover {
+            transform: translateY(-5px);
+        }
+        
+        .featured-post-image {
+            width: 100%;
+            height: 300px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            padding: 20px;
+            line-height: 1.4;
+        }
+        
+        .featured-post-content {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .featured-post-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .featured-post-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        /* Contact Form Section */
+        .contact-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .contact-info h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .contact-info p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .contact-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .contact-features li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1rem;
+        }
+        
+        .contact-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #f4d03f;
+            font-weight: bold;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form h3 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #d4af37;
+        }
+        
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, #c0392b, #a93226);
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-transform: uppercase;
+        }
+        
+        .form-submit:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        
+        .testimonials h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .testimonials-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .testimonial-image {
+            width: 80px;
+            height: 80px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-location {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 0 40px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #d4af37;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .footer-section p, .footer-section li {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .social-links a:hover {
+            opacity: 1;
+        }
+        
+        .certifications {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 0;
+            border-top: 1px solid #34495e;
+            border-bottom: 1px solid #34495e;
+            margin-bottom: 40px;
+        }
+        
+        .cert-badge {
+            width: 80px;
+            height: 80px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: #666;
+            text-align: center;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #34495e;
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            padding: 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+        
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .header {
-                padding: 10px 0;
-            }
-            
-            .logo img {
-                height: 25px;
-            }
-            
-            .hero {
-                background-attachment: scroll;
-                min-height: 100vh;
-                padding: 40px 0;
-            }
-            
             .hero-content h1 {
                 font-size: 2.5rem;
-                margin-bottom: 20px;
             }
             
-            .hero-tagline {
-                font-size: 1.1rem;
-                margin-bottom: 30px;
+            .nav-menu {
+                display: none;
             }
             
-            .btn-primary {
-                padding: 16px 32px;
-                font-size: 1rem;
-            }
-            
-            .header-cta {
-                padding: 10px 20px;
-                font-size: 0.85rem;
-            }
-            
-            .about-content {
+            .about-content, .contact-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
             
-            .about-image {
-                height: 350px;
-                margin-bottom: 30px;
+            .destinations-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
             
-            .about-text h2 {
-                font-size: 2rem;
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .instagram-featured {
+                grid-template-columns: 1fr;
+            }
+            
+            .certifications {
+                flex-wrap: wrap;
+                gap: 20px;
             }
         }
         
-        @media (max-width: 480px) {
-            .logo img {
-                height: 20px;
-                opacity: 0.6;
-            }
-            
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            
-            .about-image {
-                height: 300px;
-            }
-            
-            .container {
-                padding: 0 15px;
-            }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
     
@@ -261,19 +732,20 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-T293NFVF');</script>
     <!-- End Google Tag Manager -->
-    
-    <script>
-        function scrollToForm() {
-            document.getElementById('contacto').scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    </script>
 </head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">
+                <img src="http://perfectwedding.cl/wp-content/uploads/2021/09/LOGOTIPO-PERFECT-WEDDING-_Mesa-de-trabajo-1-1.png" alt="Perfect Wedding Logo">
+            </a>
+            <button class="header-cta" onclick="scrollToForm()">Contacto</button>
+        </nav>
+    </header>
+
     <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <div class="hero-bg">
-        </div>
         <div class="container">
             <div class="hero-content">
                 <h1>Tu boda soñada en las playas de Cartagena y el Caribe colombiano, sin estrés y con atención exclusiva</h1>
@@ -284,13 +756,10 @@
     </section>
 
     <!-- About Section -->
-    <div class="about-image">
-         <img src="http://perfectwedding.cl/wp-content/uploads/2025/03/IMG_6263.jpg" alt="Carolina Lorduy, wedding planner especialista en bodas destino en Cartagena, en su oficina profesional" loading="lazy">
-    </div>
+    <section class="about-section">
         <div class="container">
             <div class="about-content">
-                <div class="about-image">
-                </div>
+                <div class="about-image"></div>
                 <div class="about-text">
                     <h2>Carolina Lorduy, Wedding Planner Especialista en Bodas Destino</h2>
                     <p><strong>Carolina Lorduy</strong>, líder de Perfect Wedding, cuenta con más de 10 años de experiencia organizando <strong>bodas destino en Cartagena y el Caribe colombiano</strong>. Ha acompañado a decenas de parejas en el momento más importante de sus vidas, creando celebraciones únicas frente al mar.</p>
@@ -566,93 +1035,15 @@
                 behavior: 'smooth'
             });
             
-            // Track CTA click
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'cta_click', {
-                    event_category: 'CTA',
-                    event_label: 'Scroll to Form',
-                    value: 1
+            // Track CTA click for Google Tag Manager
+            if (typeof dataLayer !== 'undefined') {
+                dataLayer.push({
+                    'event': 'cta_click',
+                    'event_category': 'CTA',
+                    'event_label': 'Scroll to Form',
+                    'value': 1
                 });
             }
-        }
-
-        // Función para mostrar página de contacto extendida
-        function mostrarContactoExtendido() {
-            // Crear overlay con información extendida
-            const overlay = document.createElement('div');
-            overlay.innerHTML = `
-                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; overflow-y: auto;">
-                    <div style="background: white; max-width: 800px; margin: 50px auto; padding: 40px; border-radius: 10px;">
-                        <button onclick="document.body.removeChild(this.closest('div').parentElement)" style="float: right; background: none; border: none; font-size: 24px; cursor: pointer;">×</button>
-                        
-                        <h2 style="color: #2c3e50; margin-bottom: 30px; font-style: italic;">Información Completa de Contacto</h2>
-                        
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px;">
-                            <div>
-                                <h3 style="color: #d4af37; margin-bottom: 20px;">📞 Teléfonos</h3>
-                                <p><strong>Colombia:</strong> +57 300 123 4567</p>
-                                <p><strong>Santiago Chile:</strong> +56 9 8765 4321</p>
-                                <p><em>Horarios: Lun-Vie 9:00-18:00 (Chile)</em></p>
-                                
-                                <h3 style="color: #d4af37; margin: 30px 0 20px;">📧 Emails</h3>
-                                <p><strong>General:</strong> info@perfectwedding.cl</p>
-                                <p><strong>Carolina:</strong> carolina@perfectwedding.cl</p>
-                                <p><strong>Cotizaciones:</strong> cotizaciones@perfectwedding.cl</p>
-                            </div>
-                            
-                            <div>
-                                <h3 style="color: #d4af37; margin-bottom: 20px;">🏢 Oficinas</h3>
-                                <p><strong>Santiago:</strong><br>
-                                Las Condes, Santiago<br>
-                                (Reuniones con cita previa)</p>
-                                
-                                <p><strong>Cartagena:</strong><br>
-                                Centro Histórico<br>
-                                Cartagena de Indias, Colombia</p>
-                                
-                                <h3 style="color: #d4af37; margin: 30px 0 20px;">⏰ Proceso</h3>
-                                <p>1. Asesoría virtual gratuita (60 min)</p>
-                                <p>2. Propuesta personalizada (24h)</p>
-                                <p>3. Reunión de contratación</p>
-                                <p>4. Planificación completa</p>
-                            </div>
-                        </div>
-                        
-                        <div style="background: #f8f9fa; padding: 30px; border-radius: 10px; margin-bottom: 30px;">
-                            <h3 style="color: #2c3e50; margin-bottom: 20px;">🎯 ¿Cuál es la mejor forma de contactarnos?</h3>
-                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-                                <div style="text-align: center; padding: 20px; background: white; border-radius: 10px;">
-                                    <div style="font-size: 2rem; margin-bottom: 10px;">🎥</div>
-                                    <strong>Asesoría Virtual</strong>
-                                    <p style="font-size: 0.9rem; color: #666;">Ideal para conocernos y ver propuestas</p>
-                                    <button onclick="scrollToForm(); document.body.removeChild(this.closest('div').parentElement)" style="background: #d4af37; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Agendar</button>
-                                </div>
-                                
-                                <div style="text-align: center; padding: 20px; background: white; border-radius: 10px;">
-                                    <div style="font-size: 2rem; margin-bottom: 10px;">💬</div>
-                                    <strong>WhatsApp</strong>
-                                    <p style="font-size: 0.9rem; color: #666;">Para consultas rápidas inmediatas</p>
-                                    <button onclick="window.open('https://wa.me/56999999999', '_blank')" style="background: #25d366; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Chatear</button>
-                                </div>
-                                
-                                <div style="text-align: center; padding: 20px; background: white; border-radius: 10px;">
-                                    <div style="font-size: 2rem; margin-bottom: 10px;">📧</div>
-                                    <strong>Email</strong>
-                                    <p style="font-size: 0.9rem; color: #666;">Para información detallada</p>
-                                    <button onclick="window.open('mailto:info@perfectwedding.cl', '_blank')" style="background: #2c3e50; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Escribir</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, #d4af37, #f4d03f); border-radius: 10px; color: white;">
-                            <h3 style="margin-bottom: 15px;">⚡ Solo 12 Bodas al Año</h3>
-                            <p>Contacta ahora para asegurar tu fecha 2025-2026</p>
-                            <button onclick="scrollToForm(); document.body.removeChild(this.closest('div').parentElement)" style="background: white; color: #2c3e50; border: none; padding: 15px 30px; border-radius: 5px; cursor: pointer; margin-top: 15px; font-weight: bold;">🎯 AGENDAR AHORA</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.body.appendChild(overlay);
         }
 
         // Fade in animation on scroll
@@ -680,7 +1071,6 @@
             e.preventDefault();
             
             // Get form data
-            const formData = new FormData(this);
             const nombre = this.querySelector('input[type="text"]').value;
             const email = this.querySelector('input[type="email"]').value;
             const telefono = this.querySelector('input[type="tel"]').value;
@@ -708,68 +1098,31 @@ Mis datos:
             // Show success message
             this.innerHTML = '<div style="text-align: center; padding: 40px;"><h3 style="color: #27ae60;">¡Mensaje enviado!</h3><p>Te contactaremos en las próximas horas para agendar tu asesoría gratuita.</p></div>';
             
-            // Track conversion
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'generate_lead', {
-                    event_category: 'Contact',
-                    event_label: 'Contact Form',
-                    value: 1
+            // Track conversion for Google Tag Manager
+            if (typeof dataLayer !== 'undefined') {
+                dataLayer.push({
+                    'event': 'generate_lead',
+                    'event_category': 'Contact',
+                    'event_label': 'Contact Form',
+                    'value': 1
                 });
-            }
-            
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'Lead');
-            }
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 2px 30px rgba(0,0,0,0.15)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
             }
         });
 
         // Analytics tracking for all CTAs
         document.querySelectorAll('.btn-primary, .service-btn, .header-cta, .form-submit').forEach(button => {
             button.addEventListener('click', function() {
-                // Google Analytics event tracking
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'click', {
-                        event_category: 'CTA',
-                        event_label: this.textContent.trim(),
-                        value: 1
+                // Google Tag Manager event tracking
+                if (typeof dataLayer !== 'undefined') {
+                    dataLayer.push({
+                        'event': 'click',
+                        'event_category': 'CTA',
+                        'event_label': this.textContent.trim(),
+                        'value': 1
                     });
                 }
             });
         });
-    </script>
-
-    <!-- Google Analytics (Replace with your tracking ID) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_TRACKING_ID');
-    </script>
-
-    <!-- Facebook Pixel (Replace with your pixel ID) -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'YOUR_PIXEL_ID');
-        fbq('track', 'PageView');
     </script>
 </body>
 </html>
