@@ -949,13 +949,7 @@
                             <input type="tel" placeholder="Teléfono" required>
                         </div>
                         <div class="form-group">
-                            <select required>
-                                <option value="">Fecha tentativa de boda</option>
-                                <option value="3-meses">En los próximos 3 meses</option>
-                                <option value="6-meses">En los próximos 6 meses</option>
-                                <option value="1-año">En el próximo año</option>
-                                <option value="mas-1-año">Más de 1 año</option>
-                            </select>
+                             <input type="date" placeholder="Fecha tentativa de boda" required min="2025-01-01">
                         </div>
                         <div class="form-group">
                             <select required>
@@ -1142,7 +1136,7 @@ document.querySelector('form').addEventListener('submit', function(e) {
         nombre: this.querySelector('input[type="text"]').value,
         email: this.querySelector('input[type="email"]').value,
         telefono: this.querySelector('input[type="tel"]').value,
-        fecha: this.querySelector('select').value,
+        fecha: this.querySelector('input[type="date"]').value,
         invitados: this.querySelectorAll('select')[1].value,
         mensaje: this.querySelector('textarea').value,
         fecha_envio: new Date().toLocaleString('es-CL', {
