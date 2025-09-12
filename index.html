@@ -1149,25 +1149,33 @@ document.querySelector('form').addEventListener('submit', function(e) {
     };
     
     // Enviar email con EmailJS
-    emailjs.send('service_wkqmuh1', 'template_79tu18h', formData)
-        .then(function(response) {
-            console.log('Email enviado exitosamente:', response);
-            
-            // Track conversion para Google Ads y Analytics
-            if (typeof dataLayer !== 'undefined') {
-                dataLayer.push({
-                    'event': 'generate_lead',
-                    'event_category': 'Contact',
-                    'event_label': 'Contact Form Submission EmailJS',
-                    'value': 1,
-                    'currency': 'CLP'
-                });
-            }
-            
-            // Redirigir a página de gracias
-            window.location.href = 'gracias.html';
-            
-        }, function(error) {
+// Enviar email a Perfect Wedding
+emailjs.send('service_wkqmuh1', 'template_79tu18h', formData)
+    .then(function(response) {
+        console.log('Email a Perfect Wedding enviado:', response);
+        
+        // Enviar email de confirmación al cliente
+        return emailjs.send('service_wkqmuh1', 'template_uuwo1sl', formData);
+    })
+    .then(function(response) {
+        console.log('Email de confirmación al cliente enviado:', response);
+        
+        // Track conversion para Google Ads y Analytics
+        if (typeof dataLayer !== 'undefined') {
+            dataLayer.push({
+                'event': 'generate_lead',
+                'event_category': 'Contact',
+                'event_label': 'Contact Form Submission EmailJS',
+                'value': 1,
+                'currency': 'CLP'
+            });
+        }
+        
+        // Redirigir a página de gracias
+        window.location.href = 'gracias.html';
+        
+    })
+    .catch(function(error) {
             console.error('Error al enviar email:', error);
             
             // Fallback: abrir WhatsApp como antes
