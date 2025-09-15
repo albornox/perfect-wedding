@@ -1225,6 +1225,17 @@ Mis datos:
                 }
             });
         });
+                // Tracking específico para botón de WhatsApp
+        document.querySelector('.whatsapp-btn').addEventListener('click', function() {
+            if (typeof dataLayer !== 'undefined') {
+                dataLayer.push({
+                    'event': 'whatsapp_click',
+                    'event_category': 'Contact',
+                    'event_label': 'WhatsApp Button',
+                    'value': 1
+                });
+            }
+        });
     </script>
 </body>
 </html>
